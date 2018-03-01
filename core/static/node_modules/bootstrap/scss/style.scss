@@ -1,0 +1,97 @@
+.scrollspySite {
+	position: relative;
+	overflow: auto;
+	height: 300px;
+}
+
+.roxo{
+	color: #7d007d;
+}
+
+.bg_gradient_roxo{
+	background: linear-gradient(#8d008d,#5d005d);
+}
+
+.bg_roxo {
+	background-color: #7d007d !important;
+}
+
+.box_roxo {
+	border: 2px solid #343a40;
+	border-top-left-radius: 10px;
+	border-bottom-left-radius: 10px;
+	border-top-right-radius: 10px;
+  	border-bottom-right-radius: 10px;
+  	background-color: #FFFFFF !important
+}
+
+.box_dark {
+	border: 2px solid #343a40;
+	border-top-left-radius: 10px;
+	border-bottom-left-radius: 10px;
+	border-top-right-radius: 10px;
+  	border-bottom-right-radius: 10px;
+  	background-color: #FFFFFF !important
+}
+
+.box_generic {
+ 	border-top-left-radius: 50px;
+ 	border-bottom-left-radius: 50px;
+ 	border-top-right-radius: 50px;
+  	border-bottom-right-radius: 50px;
+}
+
+.nav-pills > a {
+	color: black;
+}
+
+.nav-pills > a:hover, .nav-pills > a:focus{
+  color: #7d007d !important;
+  background-color: white; }
+
+.nav-pills > nav.active * a {
+	color: white;
+}
+
+.bg_tools {
+    background: url("img/bg_tools.png") no-repeat !important;
+  padding-top:100px;
+  background-size:cover;
+}
+
+.card_img {
+	height: 10rem !important;
+	width: auto !important;
+}
+
+.btn_hover:hover{
+	/*background-color: #FFF200 !important;*/
+	border: 2px solid #7d007d;
+	border-top-left-radius: 10px;
+	border-bottom-left-radius: 10px;
+	border-top-right-radius: 10px;
+  	border-bottom-right-radius: 10px;
+  	background-color: #FFFFFF !important;
+	color: #7d007d !important;
+}
+
+.semibox_y_black {
+	border-top: 2px solid #7d007d;
+	border-bottom: 2px solid #7d007d;
+  	background-color: #FFFFFF !important
+}
+
+.btn_custom{
+	padding: 1px 15px 3px 2px;
+	border-radius: 50px;
+}
+
+.btn_icon {
+	padding: 8px;
+	background: #FFFFFF;
+	
+}
+
+.text_sm {
+	font-size: 60%;
+}
