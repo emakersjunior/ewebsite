@@ -5,7 +5,7 @@ from django.conf import settings
 from django.http import HttpResponse
 from django.template import Context, loader
 
-from .models import Destaque
+from .models import *
 
 from .forms import Contato
 
@@ -50,5 +50,8 @@ def contato(request):
 	return render(request, 'core/contato.html', {'form': form })
 
 def equipe(request):
-	context = {}
+	context = {
+		'alunos': Aluno.objects.order_by('pos_cargo'),
+		'docentes_ta': Docente_ta.objects.order_by('pos_cargo')
+	}
 	return render(request, 'core/equipe.html', context=context)
