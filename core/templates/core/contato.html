@@ -1,0 +1,86 @@
+{% load static %}
+{% load widget_tweaks %} <!--server para personalizar o jinja com bootstrap -->
+<!DOCTYPE html>
+<html>
+{% include 'core/common/head.html' %}
+<body>
+
+<!--       ############## NAVBAR ############### 		-->
+{% include 'core/common/header.html' %}
+
+<!--       ############## INICIO CONTEUDO ############### 		-->
+	<div class="d-block" style="background-image: url('{% static 'img/bg-tools.jpg' %}'); background-repeat: no-repeat;
+    background-size: 100%;">
+		<div class="container" >
+			
+			<div class="row">
+				
+				<div class="col-12 text-center mt-5 mb-5">
+					
+					<h1 class="display-1 roxo">EMakers</h1>
+					<p>Este é o primeiro website do núcleo de estudos em Sistemas Embarcados, <i>Internet das coisas</i> e Otimização. </p>
+
+				</div>
+
+			</div>
+
+<!-- #################### CARDS #################### -->
+	<div class="bg_roxo text-center box_generic">
+		<br> <br>
+		<div class="mb-5">
+
+
+			<h1 class="display-3 text-light ">  Contato</h1> 
+
+			<p class="lead text-light"> Nos informe uma dúvida, interesse ou sugestão! </p>	
+
+		</div>		
+
+		<div class="container">
+			
+			<div class="row text-left justify-content-center mb-5">
+				
+				<div class="col-sm-12 col-md-10 col-lg-8">
+
+					<form name="formulario" autocomplete="off" method="post">
+						{% csrf_token %}
+
+						<div class="form-row">
+							{% for field in form %}
+								<div class="form-group col-sm-12">
+									<!--<label for="{{field.id_for_label}}" class="text-light " >{{field.label}}</label> -->
+									{% render_field field class='form-control' placeholder=field.label %}
+								</div>
+							{% endfor %}
+
+					        {% if messages %}
+	                            {% for message in messages %}
+	                              <script >alert("{{message}}")</script> 
+	                            {% endfor %}
+	                        {% endif %}
+		                </div>
+
+	                	<div class="mb-5 text-center">
+							<button type="submit" class="btn btn-lg btn-dark btn_custom mt-3">
+							<i class="fa fa-envelope-open-o mx-2" aria-hidden="true" ></i>
+							Enviar
+							</button>
+						</div>
+
+					</form>
+
+				</div>
+
+			</div>
+
+
+		</div>
+
+	</div>
+
+<script src="{% static 'js/form.js' %}"></script>
+<script src="{% static 'node_modules/jquery/dist/jquery.js' %}"></script>
+<script src="{% static 'node_modules/popper.js/dist/umd/popper.js' %}"></script>
+<script src="{% static 'node_modules/bootstrap/dist/js/bootstrap.js' %}"></script>
+</body>
+</html>

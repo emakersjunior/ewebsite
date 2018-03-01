@@ -1,0 +1,922 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+{% include 'core/common/head.html' %}
+<body>
+
+<!--       ############## NAVBAR ############### 		-->
+{% include 'core/common/header.html' %}
+
+<!--       ############## CAROUSEL ############### 		-->
+
+	<div id="carouselId" class="carousel slide" data-ride="carousel">
+		
+		<ol class="carousel-indicators">
+
+			<li class="active" data-target="#carouselId" data-slide-to="0"></li>
+			<li data-target="#carouselId" data-slide-to="1"></li>
+			<li data-target="#carouselId" data-slide-to="2"></li>
+			
+		</ol>
+
+		<div class="carousel-inner" >
+			
+			<div class="carousel-item active">
+				
+				<img class="img-fluid d-block" src="{{destaques.0.imagem.normal.url}}">
+
+				<div class="carousel-caption d-none d-lg-block text-dark">
+					
+					<h1>{{ destaques.0.titulo }}</h1>
+					<p class="lead"> {{ destaques.0.texto }} </p>
+
+				</div>
+
+			</div>
+
+			<div class="carousel-item">
+
+				<img class="img-fluid d-block" src="{{destaques.1.imagem.normal.url}}">
+
+				<div class="carousel-caption d-none d-lg-block text-dark">
+					
+					<h1>{{ destaques.1.titulo }}</h1>
+					<p class="lead"> {{ destaques.1.texto }}</p>
+
+				</div>
+
+			</div>
+
+			<div class="carousel-item">
+
+				<img class="img-fluid d-block" src="{{destaques.2.imagem.normal.url}}">
+
+				<div class="carousel-caption d-none d-lg-block text-dark">
+					
+					<h1>{{ destaques.2.titulo }}</h1>
+					<p class="lead">{{ destaques.2.texto }}</p>
+
+				</div>
+
+			</div>
+		</div>
+
+		<a class="carousel-control-prev" href="#carouselId" role="button" data-slide="prev">
+
+			<span class="carousel-control-prev-icon"></span>
+			<span class="sr-only">Anterior</span>
+			
+		</a>
+
+		<a class="carousel-control-next" href="#carouselId" role="button" data-slide="next">
+
+			<span class="carousel-control-next-icon"></span>
+			<span class="sr-only">Próximo</span>
+			
+		</a>
+	</div>
+
+<!--       ############## INICIO CONTEUDO ############### 		-->
+<!-- <img class="img-fluid" src="img/bg_tools.png"> -->
+	<div class="d-block" style="background-image: url('{% static 'img/bg-tools.jpg' %}'); background-repeat: no-repeat;
+    background-size: 100%;">
+		<div class="container" >
+			
+			<div class="row">
+				
+				<div class="col-12 text-center mt-5 mb-5">
+					
+					<h1 class="display-1 roxo">EMakers</h1>
+					<p class="lead">Este é o primeiro website do núcleo de estudos em Sistemas Embarcados, <i>Internet das coisas</i> e Otimização. </p>
+
+				</div>
+
+			</div>
+
+	<!--       ############## SCROLLSPY ############### 		-->
+
+	<!--       ARRUMAR RESPONSIVIDADE -> MENU HORIZONTAL COM NAV BAR 		-->
+
+			<div class="row mb-1">
+				
+				<div class="col-sm-6 col-md-4 mb-2">
+					
+					<nav id="navbarVert" class=" navbar navbar-light flex-column bg-light box_roxo">
+						
+						<nav class=" nav nav-pills flex-column">
+
+							<a class="nav-link" id="nav_1_Historia" href="#item1">História</a>
+
+							<nav class="nav nav-pills flex-column">
+								
+								<a class="nav-link  ml-3" id="nav_1_Inicio" href="#item1-1">Início</a>								
+
+								<a class="nav-link ml-3" id="nav_1_MF" href="#item1-2">Membros fundadores</a>		
+
+							</nav>
+
+							<a class="nav-link my-2" id="nav_1_Missao" href="#item2">Missão</a>
+
+							<a class="nav-link my-2" id="nav_1_Visao" href="#item3">Visão</a>
+
+							<a class="nav-link my-2" id="nav_1_Valores" href="#item4">Valores</a>
+							
+						</nav>	
+
+					</nav>
+
+				</div>
+
+				<div class="col-sm-6 col-md-8 mb-5 bg_white" >
+					
+					<div class="scrollspySite bg-white my-3 ml-3"  data-spy="scroll" data-target="#navbarVert" data-offset="0"  >
+						
+						<h4 id="item1"> História</h4>
+						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+						tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+						quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+						consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+						cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+						proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+
+						<h5 id="item1-1"> Início </h5>
+						<p> Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+						tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+						quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+						consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+						cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+						proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+
+						<h5 id="item1-2"> Membros fundadores</h5>
+						<p> Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+						tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+						quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+						consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+						cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+						proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+
+						<h4 id="item2"> Missão</h4>
+						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+						tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+						quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+						consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+						cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+						proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+
+						<h4 id="item3"> Visão </h4>
+						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+						tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+						quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+						consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+						cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+						proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+
+						<h5 id="item4"> Valores</h5>
+						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+						tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+						quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+						consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+						cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+						proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+
+					</div>
+
+				</div>
+
+			</div>	
+
+		</div>
+
+	</div>
+
+<!-- #################### CARDS #################### -->
+
+	<div class="bg_roxo text-center" id="servicos">
+		<br> <br>
+		<div class="mb-5">
+
+			<h1 class="display-3 text-light ">O que fazemos?</h1>
+
+			<p class="lead text-light"> Serviços, produtos e mais!</p>	
+			
+			<!--<div class="container">
+			
+				<hr style="border-top: 1px solid #FFF;"> 
+			
+			</div>-->
+		
+		</div>		
+
+		<div class="row justify-content-sm-center">
+				
+			<div class="col-sm-6 col-md-4 col-10">
+				
+				<div class="card ml-5 mb-4 ">
+					
+					<div class="mx-2 mt-4">
+					
+						<img class="card-img-top card_img" src="{% static 'img/icon_android.png' %}">
+					
+					</div>
+					
+					<div class="card-body">
+					
+						<h4 class="card-title"> Soluções mobile</h4>
+					
+						<h6 class="subtitle text-muted">Android & IOS</h6>
+					
+						<p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+						tempor incididunt ut labore et dolore magna aliqua. Ut enim ad.</p>
+					
+						<a href="#" class="btn btn-lg btn-dark btn_custom mt-3 card-link" data-toggle="modal" data-target="#modalAndroid">
+							
+							<i class="fa fa-plus-circle mx-2" aria-hidden="true"></i>
+							Saiba Mais
+						</a>
+					
+						<!--<button href="#" class="btn btn-lg bg_roxo btn_hover box_generic text-light card-link" data-toggle="modal" data-target="#modalAndroid">Saiba mais</button>-->
+					</div>
+
+					<div class="card-footer bg-dark">
+							
+						<h6 class="text-light mt-1"><i class="fa fa-cog" aria-hidden="true"></i> Cursos em desenvolvimento <i class="fa fa-cog" aria-hidden="true"></i> </h6>
+
+					</div>
+
+				</div>
+
+			</div>
+
+			<div class="col-sm-6 col-md-4 col-10">
+				
+				<div class="card mb-4 mr-sm-5 mr-md-0 ml-5 ml-sm-0 ml-md-0 ml-lg-0">
+					
+					<div class="mx-2 mt-4">
+					
+						<img class="card-img-top card_img img-fluid" src="{% static 'img/icon_wi-fi.png' %}">
+					
+					</div>
+
+					<div class="card-body">
+						<h4 class="card-title"> Soluções em IoT</h4>
+						<h6 class="subtitle text-muted">Atmega & ESP8266X & RPi</h6>
+						<p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+						tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.</p>
+		
+						<a href="#" class="btn btn-lg btn-dark btn_custom mt-3 card-link" data-toggle="modal" data-target="#modalIoT">
+
+								<i class="fa fa-plus-circle mx-2" aria-hidden="true"></i>
+								Saiba Mais
+
+						</a>
+		
+					</div>
+
+					<div class="card-footer bg-dark">
+							
+						<h6 class="text-light mt-1"><i class="fa fa-cog" aria-hidden="true"></i> Cursos em desenvolvimento <i class="fa fa-cog" aria-hidden="true"></i> </h6>
+
+					</div>
+
+				</div>
+
+			</div>
+
+			<div class="col-sm-6 col-md-4 col-10">
+				
+				<div class="card mr-md-5 mr-lg-5 mr-sm-0 mb-4 ml-5 ml-sm-0 ml-md-0 ml-lg-0">
+					
+					<div class="mx-2 mt-4 mb-3">
+					
+						<img class="card-img-top card_img" src="{% static 'img/icon_mcu.png' %}">
+					
+					</div>
+
+					<div class="card-body">
+						<h4 class="card-title">Desenvolvimento de plataformas de aprendizagem</h4>
+						<h6 class="subtitle text-muted">Shields padrão Arduino & Controladores </h6>
+						<p class="card-text">Lorem ipsum dolor sit amet.</p>
+
+						<a href="#" class="btn btn-lg btn-dark btn_custom mt-3 card-link" data-toggle="modal" data-target="#modalPlat">
+
+								<i class="fa fa-plus-circle bg mx-2" aria-hidden="true"></i>
+								Saiba Mais
+
+						</a>
+
+					</div>
+
+					<div class="card-footer bg-dark">
+							
+						<h6 class="text-light mt-1"><i class="fa fa-cog" aria-hidden="true"></i> Cursos em desenvolvimento <i class="fa fa-cog" aria-hidden="true"></i> </h6>
+
+					</div>
+
+				</div>
+
+			</div>
+
+		</div>
+
+		<div class="row justify-content-sm-center ">
+				
+			<div class="col-sm-6 col-md-4 col-10">
+				
+				<div class="card ml-5 mb-4">
+					
+					<div class="mx-2 mt-4">
+					
+						<img class="card-img-top card_img" src="{% static 'img/icon_graphic.png' %}">
+					
+					</div>
+
+					<div class="card-body">
+						<h4 class="card-title"> Consultoria em integração de ferramentas corporativas </h4>
+						<h6 class="subtitle text-muted">Slack & Trello & Pacote Office & mais... </h6>
+						<p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do.</p>
+
+						<a href="#" class="btn btn-lg btn-dark btn_custom mt-3 card-link" data-toggle="modal" data-target="#modalTools">
+
+								<i class="fa fa-plus-circle mx-2" aria-hidden="true"></i>
+								Saiba Mais
+
+						</a>
+
+					</div>
+					<div class="card-footer bg-dark">
+							
+						<h6 class="text-light mt-1"><i class="fa fa-cog" aria-hidden="true"></i> Cursos em desenvolvimento <i class="fa fa-cog" aria-hidden="true"></i> </h6>
+
+					</div>
+				</div>
+
+			</div>
+
+			<div class="col-sm-6 col-md-4 col-10">
+				
+				<div class="card mb-4 mr-sm-5 mr-md-0  ml-5 ml-sm-0 ml-md-0 ml-lg-0">
+					
+					<div class="mx-2 mt-4">
+					
+						<img class="card-img-top card_img" src="{% static 'img/icon_ai.png' %}">
+					
+					</div>
+
+					<div class="card-body">
+						<h4 class="card-title"> Soluções em inteligência computacional</h4>
+						<h6 class="subtitle text-muted">Android & IOS</h6>
+						<p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+						tempor incididunt ut labore et dolore magna aliqua.</p>
+
+						<a href="#" class="btn btn-lg btn-dark btn_custom mt-3 card-link" data-toggle="modal" data-target="#modalIC">
+
+								<i class="fa fa-plus-circle mx-2" aria-hidden="true"></i>
+								Saiba Mais
+
+						</a>
+
+					</div>
+					
+					<div class="card-footer bg-dark">
+							
+						<h6 class="text-light mt-1"><i class="fa fa-cog" aria-hidden="true"></i> Cursos em desenvolvimento <i class="fa fa-cog" aria-hidden="true"></i> </h6>
+
+					</div>
+
+				</div>
+
+			</div>
+
+			<div class="col-sm-6 col-md-4 mb-5 col-10">
+				
+				<div class="card mr-md-5 mr-lg-5 mr-sm-0 mb-4  ml-5 ml-sm-0 ml-md-0 ml-lg-0">
+					
+					<div class="mx-2 mt-4">
+					
+						<img class="card-img-top card_img img-fluid" src="{% static 'img/icon_train.png' %}">
+					
+					</div>
+
+					<div class="card-body">
+						<h4 class="card-title"> Treinamentos</h4>
+						<h6 class="subtitle text-muted">Eletrônica & Programação & Ferramentas</h6>
+						<p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+						tempor incididunt ut labore et dolore magna aliqua. Ut enim ad.</p>
+
+						<a href="#" class="btn btn-lg btn-dark btn_custom mt-3 card-link" data-toggle="modal" data-target="#modalTrain">
+
+							<i class="fa fa-plus-circle mx-2" aria-hidden="true"></i>
+							Saiba Mais
+
+						</a>
+
+					</div>
+
+					<div class="card-footer bg-dark">
+							
+						<h6 class="text-light mt-1"><i class="fa fa-cog" aria-hidden="true"></i> Cursos em desenvolvimento <i class="fa fa-cog" aria-hidden="true"></i> </h6>
+
+					</div>
+
+				</div>
+
+			</div>
+
+		</div>
+
+
+	</div>
+
+
+<!-- ##################### JUMBOTRON ########################## -->
+
+
+	<div class="jumbotron jumbotron-fluid bg-white" id="portfolio">
+		
+		<div class="container">
+			
+			<div class="row">
+				
+				<div class="col-12 text-center">
+					
+					<h1 class="display-4"> O que já criamos? </h1>
+					<p class="lead"> Portifólio </p>
+					<hr>
+				</div>
+
+			</div>
+
+			<div class="row">
+
+				<div class="col-12">
+					
+						<ul class="nav nav-pills justify-content-center" id="navPortifolio" role="tablist" >
+							
+							<li class=" nav-item" >
+								
+								<a class="nav-link active" id="navPortifolio_01" data-toggle="pill" href="#navPortifolio_item_01" > TomBanana</a>
+								
+							</li>
+
+							<li class=" nav-item">
+								
+								<a class="nav-link" id="navPortifolio_02" data-toggle="pill" href="#navPortifolio_item_02"> E-Milk</a>
+								
+							</li>
+
+							<li class=" nav-item">
+								
+								<a class="nav-link" id="navPortifolio_03" data-toggle="pill" href="#navPortifolio_item_03"> EDAL</a>
+								
+							</li>
+
+						</ul>
+
+						<div class="tab-content" id="navPortifolio_content">
+
+
+							<div class="tab-pane fade show active mt-5" id="navPortifolio_item_01" role="tabpanel">
+
+								<h1 class="display-5 text-center"> TomBanana </h1>
+								<h4 class="text-muted text-center"> Um app mobile que prevê a próxima colheita da banana </h4>
+
+								<div class="row mt-5">
+									
+									<div class="col-6">
+										
+										<div class="embed-responsive embed-responsive-16by9">
+
+											<iframe class="embed-responsive-item" src="https://www.youtube.com/embed/"></iframe>
+											
+
+
+										</div>
+
+									</div>
+
+									<div class="col-6">
+										
+										<p> Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+										tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+										quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+										consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+										cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+										proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+
+									</div>
+
+								</div>
+
+
+
+							</div>
+
+							<div class="tab-pane fade show mt-5" id="navPortifolio_item_02" role="tabpanel">
+
+								<h1 class="display-5 text-center"> E-Milk </h1>
+								<h4 class="text-muted text-center"> Uma solução embarcada que gerencia o gado e prevê sua produção</h4>
+
+								<div class="row mt-5">
+									
+									<div class="col-6">
+										
+										<div class="embed-responsive embed-responsive-16by9">
+
+											<iframe class="embed-responsive-item" src="https://www.youtube.com/embed/"></iframe>
+											
+
+
+										</div>
+
+									</div>
+
+									<div class="col-6">
+										
+										<p> Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+										tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+										quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+										consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+										cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+										proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+
+									</div>
+
+								</div>
+
+							</div>
+							<div class="tab-pane fade show mt-5" id="navPortifolio_item_03" role="tabpanel">
+								
+								<h1 class="display-5 text-center"> EDAL </h1>
+								<h4 class="text-muted text-center"> Sistema embarcado que monitora o nível de atenção de condutores </h4>
+
+								<div class="row mt-5">
+									
+									<div class="col-6">
+										
+										<div class="embed-responsive embed-responsive-16by9">
+
+											<iframe class="embed-responsive-item" src="https://www.youtube.com/embed/"></iframe>
+											
+
+
+										</div>
+
+									</div>
+
+									<div class="col-6">
+										
+										<p> Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+										tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+										quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+										consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+										cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+										proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+
+									</div>
+
+								</div>
+
+							</div>
+							
+
+
+						</div>
+
+				</div>				
+
+
+			</div>
+
+		</div>
+
+	</div>
+
+
+	<!-- ###################### FOOTER ######################## -->
+
+	<div class="bg-dark text-light justify-content-center text-center">
+		<div class="row">
+			<div class="my-5 col-sm-12 text-center">
+				<h2 class=" display-4 "> Onde estamos?</h2>
+				<p class="lead"> Endereço, contato e redes!</p>
+			</div>
+		</div>
+
+		<div class="row justify-content-center">
+			<div class="col-sm-12 col-md-6 col-lg-6 text-light ">
+
+				<div class=" mx-auto mb-5 rounded" id="googleMap" style="width:80%;height:400px;"></div>
+
+			</div>
+
+			<div class="row col-6  mt-lg-5 mt-md-3 mt-sm-0 ">
+				
+				<div class="col-4 col-sm-4">
+					
+					<a class="text-light" href="http://facebook.com/EMakersUFLA">
+						
+						<i class="fa fa-facebook-square fa-5x mr-3 mr-sm-3 mr-md-3 mr-lg-3" aria-hidden="true"></i>
+					
+					</a>
+
+				</div>
+
+
+				<div class=" col-4 col-sm-4">
+					
+					<a class="text-light" href="http://facebook.com/EMakersUFLA">
+					
+						<i class="fa fa-instagram fa-5x mr-4" aria-hidden="true"></i>
+					
+					</a>
+
+				</div>
+
+				<div class="col-4 col-sm-4">
+					
+					<a class="text-light" href="http://facebook.com/EMakersUFLA">
+
+						<i class="fa fa-youtube-square fa-5x mr-5 mb-lg-5 mb-md-3 mb-sm-5" aria-hidden="true"></i>
+
+					</a>
+
+				</div>
+
+				<div class="col-12 col-sm-12 ml-3">
+					
+					<p class="ml-5 ml-lg-0 ml-md-0 ml-sm-0 mr-0 mr-sm-5 mr-md-5 mr-lg-5 mt-sm-0 mt-md-0 mt-lg-0 mt-4 mb-5">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+					tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+					quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+					consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+					cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+					proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+
+				</div>
+
+			</div>
+
+
+
+		</div>
+
+	</div>
+
+
+	<!-- ############## MODALS ################# -->
+
+	<!-- ANDROID -->
+	<div class="modal fade" id="modalAndroid" role="dialog">
+		
+		<div class="modal-dialog" role="document">
+
+			<div class="modal-content">
+				
+				<div class="modal-header">
+					
+					<h5 class="modal-title"> Soluções mobile</h5>
+
+					<button class="close" type="button" data-dismiss="modal">
+						
+						<span>&times;</span>
+
+					</button>
+
+				</div>
+
+				<div class="modal-body">
+					
+					<p> Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+					tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+					quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo</p>
+
+				</div>				
+
+				<div class="modal-footer">
+					<button class="btn btn-danger" type="button" data-dismiss="modal">Fechar</button>
+
+
+				</div>
+
+			</div>
+			
+
+
+		</div>
+
+	</div>
+
+
+	<!-- IoT -->
+	<div class="modal fade" id="modalIoT" role="dialog">
+		
+		<div class="modal-dialog" role="document">
+
+			<div class="modal-content">
+				
+				<div class="modal-header">
+					
+					<h5 class="modal-title"> Soluções em IoT com microcomputadores e microcontroladores</h5>
+
+					<button class="close" type="button" data-dismiss="modal">
+						
+						<span>&times;</span>
+
+					</button>
+
+				</div>
+
+				<div class="modal-body">
+					
+					<p> Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+					tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+					quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo</p>
+
+				</div>				
+
+				<div class="modal-footer">
+					<button class="btn btn-danger" type="button" data-dismiss="modal">Fechar</button>
+
+
+				</div>
+
+			</div>
+			
+
+
+		</div>
+
+	</div>
+
+	<!-- IC -->
+	<div class="modal fade" id="modalIC" role="dialog">
+		
+		<div class="modal-dialog" role="document">
+
+			<div class="modal-content">
+				
+				<div class="modal-header">
+					
+					<h5 class="modal-title"> Soluções em inteligência computacional</h5>
+
+					<button class="close" type="button" data-dismiss="modal">
+						
+						<span>&times;</span>
+
+					</button>
+
+				</div>
+
+				<div class="modal-body">
+					
+					<p> Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+					tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+					quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo</p>
+
+				</div>				
+
+				<div class="modal-footer">
+					<button class="btn btn-danger" type="button" data-dismiss="modal">Fechar</button>
+
+
+				</div>
+
+			</div>
+			
+
+
+		</div>
+
+	</div>
+
+
+	<!-- Ferramentas -->
+	<div class="modal fade" id="modalTools" role="dialog">
+		
+		<div class="modal-dialog" role="document">
+
+			<div class="modal-content">
+				
+				<div class="modal-header">
+					
+					<h5 class="modal-title"> Consultoria em integração de ferramentas corporativas</h5>
+
+					<button class="close" type="button" data-dismiss="modal">
+						
+						<span>&times;</span>
+
+					</button>
+
+				</div>
+
+				<div class="modal-body">
+					
+					<p> Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+					tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+					quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo</p>
+
+				</div>				
+
+				<div class="modal-footer">
+					<button class="btn btn-danger" type="button" data-dismiss="modal">Fechar</button>
+
+
+				</div>
+
+			</div>
+			
+
+
+		</div>
+
+	</div>
+
+	<!-- Plataformas -->
+	<div class="modal fade" id="modalPlat" role="dialog">
+		
+		<div class="modal-dialog" role="document">
+
+			<div class="modal-content">
+				
+				<div class="modal-header">
+					
+					<h5 class="modal-title"> Desenvolvimento de plataformas de aprendizagem</h5>
+
+					<button class="close" type="button" data-dismiss="modal">
+						
+						<span>&times;</span>
+
+					</button>
+
+				</div>
+
+				<div class="modal-body">
+					
+					<p> Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+					tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+					quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo</p>
+
+				</div>				
+
+				<div class="modal-footer">
+					<button class="btn btn-danger" type="button" data-dismiss="modal">Fechar</button>
+
+
+				</div>
+
+			</div>
+			
+
+
+		</div>
+
+	</div>
+
+	<!-- Treinamentos -->
+	<div class="modal fade" id="modalTrain" role="dialog">
+		
+		<div class="modal-dialog" role="document">
+
+			<div class="modal-content">
+				
+				<div class="modal-header">
+					
+					<h5 class="modal-title"> Treinamentos</h5>
+
+					<button class="close" type="button" data-dismiss="modal">
+						
+						<span>&times;</span>
+
+					</button>
+
+				</div>
+
+				<div class="modal-body">
+					
+					<p> Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+					tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+					quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo</p>
+
+				</div>				
+
+				<div class="modal-footer">
+					<button class="btn btn-danger" type="button" data-dismiss="modal">Fechar</button>
+
+
+				</div>
+
+			</div>
+			
+
+
+		</div>
+
+	</div>
+	
+<script src="{% static 'js/style.js' %}"></script>
+<script src="{% static 'js/maps.js' %}"></script>
+<script src="https://maps.googleapis.com/maps/api/js?callback=myMap"></script>
+<script src="{% static 'node_modules/jquery/dist/jquery.js' %}"></script>
+<script src="{% static 'node_modules/popper.js/dist/umd/popper.js' %}"></script>
+<script src="{% static 'node_modules/bootstrap/dist/js/bootstrap.js' %}"></script>
+</body>
+</html>
