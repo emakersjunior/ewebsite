@@ -14,21 +14,26 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.contrib import admin
-from django.urls import path
+from django.urls import path, re_path
 
 # usado para mostrar imagens que estao no bd
 from django.conf.urls.static import static
 from django.conf import settings
 
-from core import views
-
+# dispara os erros
 from django.conf.urls import handler404, handler500
+
+from django.views import static as ds
+
+from core import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', views.index, name='index'),
     path('contato/', views.contato, name='contato'),
     path('equipe/', views.equipe, name='equipe'),
+    path('blog/', views.blog, name='blog'),
+    path('blog/<titulo>/', views.blog_post, name='blog_post'),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT) # usado para mostrar imagens que estao no bd
 
 # trata erros

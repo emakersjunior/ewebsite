@@ -7,7 +7,7 @@ from django.template import Context, loader
 
 from .models import *
 
-from .forms import Contato
+from .forms import *
 
 # Create your views here.
 
@@ -21,12 +21,14 @@ def error500(request):
 
 def index(request):
 	context = {
-		'destaques': Destaque.objects.order_by('titulo')
+		'destaques': Destaque.objects.order_by('titulo'),
+		'servicos': Texto_modal.objects.order_by('pk'),
+		'portfolio': Portfolio.objects.order_by('nome')
 	}
 	return render(request, 'core/index.html', context=context)
 
 def contato(request):
-	form = Contato(request.POST or None)
+	form = ContatoForm(request.POST or None)
 	if request.method == 'POST':
 		if form.is_valid():
 			nome = form.cleaned_data['nome']
@@ -43,7 +45,7 @@ def contato(request):
 			email.send()
 
 			messages.success(request, 'Enviado com sucesso!')
-			form = Contato() # limpa formulario apos mandar
+			form = ContatoForm() # limpa formulario apos mandar
 		else:
 			messages.error(request, 'Erro ao enviar e-mail.')
 
@@ -52,6 +54,36 @@ def contato(request):
 def equipe(request):
 	context = {
 		'alunos': Aluno.objects.order_by('pos_cargo'),
-		'docentes_ta': Docente_ta.objects.order_by('pos_cargo')
-	}
+		'docentes_ta': Docente_ta.objects.order_by('pos_cargo'),
+	}	
 	return render(request, 'core/equipe.html', context=context)
+
+def blog(request):
+	context = {
+		'postagens': Postagem.objects.order_by('data_publicacao')
+	}
+	return render(request, 'core/blog.html', context=context)
+
+                       # refente a url
+def blog_post(request, titulo):
+	form = ComentarioForm(request.POST or None)
+	postagem = Postagem.objects.get(titulo=titulo)
+	if request.method == 'POST':
+		if form.is_valid():
+			nome = form.cleaned_data['nome']
+			comentario = form.cleaned_data['comentario']
+			comentario_post = Comentario(post_comentado=postagem, nome=nome, comentario=comentario)
+			comentario_post.save()
+			form = ContatoForm()
+		context = {
+			'postagem': postagem,
+			'form': form,
+		}
+	else:
+		comentarios = Comentario.objects.filter(post_comentado=postagem.pk)
+		context = {
+			'postagem': postagem,
+			'comentarios': comentarios,
+			'form': form,
+		}
+	return render(request, 'core/blog_post.html', context=context)
