@@ -23,8 +23,6 @@ from django.conf import settings
 # dispara os erros
 from django.conf.urls import handler404, handler500
 
-from django.views import static as ds
-
 from core import views
 
 urlpatterns = [
@@ -34,6 +32,7 @@ urlpatterns = [
     path('equipe/', views.equipe, name='equipe'),
     path('blog/', views.blog, name='blog'),
     path('blog/<titulo>/', views.blog_post, name='blog_post'), # <titulo> e uma parametro para a view blog_post
+    path('resultado/', views.pesquisa_blog, name='pesquisa_blog'),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT) # usado para mostrar imagens que estao no bd
 
 # trata erros

@@ -2,77 +2,11 @@
 {% load widget_tweaks %}
 <!DOCTYPE html>
 <html>
-<head>
-	<meta charset="utf-8">
-	<link rel="stylesheet" type="text/css" href="{% static 'node_modules/bootstrap/compiler/bootstrap.css' %}">
-	<link rel="stylesheet" type="text/css" href="{% static 'node_modules/bootstrap/compiler/style.css' %}">
-	<title>EMakers</title>
-</head>
+{% include 'core/common/head_blog.html' %}
 <body>
 
 <!--       ############## NAVBAR ############### 		-->
-
-	<nav class="navbar navbar-expand-lg navbar-light bg-gradient-light">
-
-		<a class="collapse navbar-collapse" id="navbarImg" href="{% url 'index' %}"><img  src="{% static 'img/logo_emakers_preta.png' %}" height="40em"></a>
-
-		<div class="container">
-
-			<a class="navbar-brand h1 mb-0" href="{% url 'blog' %}"> Blog </a>
-
-			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSite,#navbarImg">
-
-				<span class="navbar-toggler-icon"></span>	
-
-			</button>
-
-			<div class="collapse navbar-collapse" id="navbarSite">
-
-				<ul class="navbar-nav mr-auto">
-
-					
-					<li class="nav-item mr-2">
-						<a class="nav-link" href="{% url 'index' %}">Home</a>
-					</li>
-					
-					<li class="nav-item dropdown mr-2">
-						<a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown" id="navDrop">Artigos</a>
-						<div class="dropdown-menu">
-							<a class="dropdown-item" href="#">Eletrônica</a>
-							<a class="dropdown-item" href="#">Desenvolvimento Mobile</a>
-							<a class="dropdown-item" href="#">Linguagens</a>
-							<a class="dropdown-item" href="#">Ferramentas</a>
-						</div>
-					</li>
-
-					<li class="nav-item dropdown mr-2">
-						<a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown" id="navDrop">Cursos</a>
-						<div class="dropdown-menu">
-							<a class="dropdown-item" href="#">Eletrônica</a>
-							<a class="dropdown-item" href="#">Desenvolvimento Mobile</a>
-							<a class="dropdown-item" href="#">Linguagens</a>
-							<a class="dropdown-item" href="#">Ferramentas</a>
-						</div>
-					</li>
-					<li class="nav-item mr-2">
-						<a class="nav-link" href="{% url 'equipe' %}">Equipe</a>
-					</li>
-					<li class="nav-item mr-2">
-						<a class="nav-link" href="{% url 'contato' %}">Contato</a>
-					</li>
-				</ul>
-
-				<ul class="navbar-nav ml-auto">
-					<form class="form-inline">
-						<input type="search" class="form-control mr-2" aria-label="Small" aria-describedby="inputGroup-sizing-sm" placeholder="Pesquisar...">
-						<button class="btn btn-light" type="Submit"> 	<img src="{% static 'img/lupa.svg' %}" height="15rem">
-						</button>
-					</form>
-				</ul>
-			</div>
-		</div>
-	</nav>
-
+{% include 'core/common/header_blog.html' %}
 
 <!--       ############## INICIO CONTEUDO ############### 		-->
 <!-- <img class="img-fluid" src="img/bg_tools.png"> -->
@@ -210,18 +144,7 @@
     <!-- /.container -->
 
     <!-- Footer -->
-    <footer class="py-5 bg-dark">
-      <div class="container">
-        <p class="m-0 text-center text-white">EMakers</p>
-      </div>
-      <!-- /.container -->
-    </footer>
+    {% include 'core/common/footer_blog.html' %}
 
-
-
-
-<script src="{% static 'node_modules/jquery/dist/jquery.js' %}"></script>
-<script src="{% static 'node_modules/popper.js/dist/umd/popper.js' %}"></script>
-<script src="{% static 'node_modules/bootstrap/dist/js/bootstrap.js' %}"></script>
 </body>
 </html>
