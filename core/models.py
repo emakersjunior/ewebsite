@@ -81,7 +81,7 @@ class Postagem(models.Model):
 	def __str__(self):
 		return self.titulo
 
-	# retorna um atributo do objeto para url
+	# retorna um atributo do objeto para url, que relaciona com a view blog_post
 	def get_absolute_url(self):
 		return reverse('blog_post', args=[str(self.titulo)])
 

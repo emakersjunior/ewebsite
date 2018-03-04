@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from django.contrib import messages
 from django.core.mail.message import EmailMessage
 from django.conf import settings
@@ -45,7 +45,7 @@ def contato(request):
 			email.send()
 
 			messages.success(request, 'Enviado com sucesso!')
-			form = ContatoForm() # limpa formulario apos mandar
+			return redirect('contato') # retorna a mesma pagina de contato
 		else:
 			messages.error(request, 'Erro ao enviar e-mail.')
 
@@ -67,18 +67,20 @@ def blog(request):
                        # refente a url
 def blog_post(request, titulo):
 	form = ComentarioForm(request.POST or None)
-	postagem = Postagem.objects.get(titulo=titulo)
+	postagem = Postagem.objects.get(titulo=titulo) # pega a postagem da url
 	if request.method == 'POST':
 		if form.is_valid():
 			nome = form.cleaned_data['nome']
 			comentario = form.cleaned_data['comentario']
-			comentario_post = Comentario(post_comentado=postagem, nome=nome, comentario=comentario)
+			comentario_post = Comentario(post_comentado=postagem, 
+										nome=nome, 
+										comentario=comentario) # salva no bd comentario, com a postagem clicada
 			comentario_post.save()
-			form = ContatoForm()
 		context = {
 			'postagem': postagem,
 			'form': form,
 		}
+		return redirect('blog_post', titulo=titulo) # redireciona para a mesma pag att com o novo comentario
 	else:
 		comentarios = Comentario.objects.filter(post_comentado=postagem.pk)
 		context = {
