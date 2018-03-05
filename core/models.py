@@ -25,6 +25,7 @@ class Servico(models.Model):
 
 class Texto_modal(models.Model):
 	servico = models.ForeignKey(Servico, on_delete=models.DO_NOTHING)
+	modal = models.CharField(max_length=20)
 	texto = models.TextField()
 
 	def __str__(self):

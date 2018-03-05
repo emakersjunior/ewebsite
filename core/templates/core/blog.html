@@ -9,113 +9,98 @@
 
 <!--       ############## INICIO CONTEUDO ############### 		-->
 <!-- <img class="img-fluid" src="img/bg_tools.png"> -->
-	<div class="container">
+    <div class="container">
+        <div class="row">
 
-      <div class="row">
+            <!-- Post Content Column -->
+            {% for p in postagens %}
+            <div class="col-lg-8">
+                <div class="card mb-4 mt-2">
+                    <div class="card-body">
+                    <!-- Title -->
+                        <a href="{{ p.get_absolute_url }}">
+                            <h1 class="mt-4 roxo">{{ p.titulo }}</h1>
+                        </a>
 
-        <!-- Post Content Column -->
-        <div class="col-lg-8">
+                        <!-- Author -->
+                        <p class="lead">
+                            por
+                            <a href="#">{{ p.autor }}</a>
+                        </p>
 
-          <!-- Title -->
-          <a href="{{ postagens.0.get_absolute_url }}"><h1 class="mt-4 roxo">{{ postagens.0.titulo }}</h1></a>
+                        <hr>
 
-          <!-- Author -->
-          <p class="lead">
-            por
-            <a href="#">{{ postagens.0.autor }}</a>
-          </p>
+                        <!-- Date/Time -->
+                        <p>{{ p.data_publicacao }}</p>
 
-          <hr>
+                        <hr>
 
-          <!-- Date/Time -->
-          <p>{{ postagens.0.data_publicacao }}</p>
+                        <!-- Preview Image -->
+                        <img class="img-fluid rounded" src="{{ p.imagem.normal.url }}" alt="">
 
-          <hr>
-
-          <!-- Preview Image -->
-          <img class="img-fluid rounded" src="{{ postagens.0.imagem.normal.url }}" alt="">
-
-          <hr>
-
-          <!-- Post Content -->
-          <p class="lead">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ducimus, vero, obcaecati, aut, error quam sapiente nemo saepe quibusdam sit excepturi nam quia corporis eligendi eos magni recusandae laborum minus inventore?</p>
-
-          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ut, tenetur natus doloremque laborum quos iste ipsum rerum obcaecati impedit odit illo dolorum ab tempora nihil dicta earum fugiat. Temporibus, voluptatibus.</p>
-
-          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eos, doloribus, dolorem iusto blanditiis unde eius illum consequuntur neque dicta incidunt ullam ea hic porro optio ratione repellat perspiciatis. Enim, iure!</p>
-
-          <blockquote class="blockquote">
-            <p class="mb-0">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.</p>
-            <footer class="blockquote-footer">Someone famous in
-              <cite title="Source Title">Source Title</cite>
-            </footer>
-          </blockquote>
-
-          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Error, nostrum, aliquid, animi, ut quas placeat totam sunt tempora commodi nihil ullam alias modi dicta saepe minima ab quo voluptatem obcaecati?</p>
-
-          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Harum, dolor quis. Sunt, ut, explicabo, aliquam tenetur ratione tempore quidem voluptates cupiditate voluptas illo saepe quaerat numquam recusandae? Qui, necessitatibus, est!</p>
-
-          <hr>
-
-
-
-        <!-- Sidebar Widgets Column -->
-        <div class="col-md-4">
-
-          <!-- Categories Widget -->
-          <div class="card my-4">
-            <h5 class="card-header bg_roxo text-light">Categorias</h5>
-            <div class="card-body">
-              <div class="row">
-                <div class="col-lg-6">
-                  <ul class="list-unstyled mb-0">
-                    <li>
-                      <a href="#">Eletrônica</a>
-                    </li>
-                    <li class="mt-2">
-                      <a href="#">Web Design</a>
-                    </li>
-                    <li class="mt-2">
-                      <a href="#">Programação</a>
-                    </li>
-                  </ul>
+                        <hr>
+                        <!-- Post Content -->
+                        <p class="lead">{{ p.texto | truncatechars:100 }}</p>
+                        <a class="btn btn-link roxo" href="{{ p.get_absolute_url }}">Leia mais ></a>
+                    </div>
                 </div>
-                <div class="col-lg-6">
-                  <ul class="list-unstyled mb-0">
-                    <li>
-                      <a href="#">Design</a>
-                    </li>
-                    <li class="mt-2">
-                      <a href="#">Inteligência Computacional</a>
-                    </li>
-                    <li class="mt-2">
-                      <a href="#">Softwares</a>
-                    </li>
-                  </ul>
-                </div>
-              </div>
             </div>
-          </div>
+            {% endfor %}
 
-          <!-- Side Widget -->
-          <div class="card my-4">
-            <h5 class="card-header bg_roxo text-light">Cursos</h5>
-            <div class="card-body">
-              Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-              tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-              quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+            <!-- Sidebar Widgets Column -->
+            <div class="col-md-4">
+                <!-- Categories Widget -->
+                <div class="card my-4">
+                    <h5 class="card-header bg_roxo text-light">Categorias</h5>
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col-lg-6">
+                                <ul class="list-unstyled mb-0">
+                                    <li>
+                                        <a href="#">Eletrônica</a>
+                                    </li>
+                                    <li class="mt-2">
+                                        <a href="#">Web Design</a>
+                                    </li>
+                                    <li class="mt-2">
+                                        <a href="#">Programação</a>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="col-lg-6">
+                                <ul class="list-unstyled mb-0">
+                                    <li>
+                                        <a href="#">Design</a>
+                                     </li>
+                                    <li class="mt-2">
+                                        <a href="#">Inteligência Computacional</a>
+                                    </li>
+                                    <li class="mt-2">
+                                        <a href="#">Softwares</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Side Widget -->
+                <div class="card my-4">
+                    <h5 class="card-header bg_roxo text-light">Cursos</h5>
+                    <div class="card-body">
+                      Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                      tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+                      quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+                    </div>
+                </div>
             </div>
-          </div>
 
         </div>
-
-      </div>
-      <!-- /.row -->
-
+        <!-- /.row -->
     </div>
     <!-- /.container -->
 
-    <!-- Footer -->
-    {% include 'core/common/footer_blog.html' %}
+<!-- Footer -->
+{% include 'core/common/footer_blog.html' %}
 </body>
 </html>

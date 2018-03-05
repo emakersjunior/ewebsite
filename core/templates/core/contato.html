@@ -25,57 +25,45 @@
 			</div>
 
 <!-- #################### CARDS #################### -->
-	<div class="bg_roxo text-center box_generic">
-		<br> <br>
-		<div class="mb-5">
+			<div class="bg_roxo text-center box_generic">
+				<br> <br>
+				<div class="mb-5">
+					<h1 class="display-3 text-light ">  Contato</h1> 
+					<p class="lead text-light"> Nos informe uma dúvida, interesse ou sugestão! </p>	
+				</div>		
 
+				<div class="container">
+					<div class="row text-left justify-content-center mb-5">
+						<div class="col-sm-12 col-md-10 col-lg-8">
+							<form name="formulario" autocomplete="off" method="post">
+								{% csrf_token %}
+								<div class="form-row">
+									{% for field in form %}
+										<div class="form-group col-sm-12">
+											<!--<label for="{{field.id_for_label}}" class="text-light " >{{field.label}}</label> -->
+											{% render_field field class='form-control' placeholder=field.label %}
+										</div>
+									{% endfor %}
 
-			<h1 class="display-3 text-light ">  Contato</h1> 
+							        {% if messages %}
+			                            {% for message in messages %}
+			                              <script >alert("{{message}}")</script> 
+			                            {% endfor %}
+			                        {% endif %}
+				                </div>
 
-			<p class="lead text-light"> Nos informe uma dúvida, interesse ou sugestão! </p>	
-
-		</div>		
-
-		<div class="container">
-			
-			<div class="row text-left justify-content-center mb-5">
-				
-				<div class="col-sm-12 col-md-10 col-lg-8">
-
-					<form name="formulario" autocomplete="off" method="post">
-						{% csrf_token %}
-
-						<div class="form-row">
-							{% for field in form %}
-								<div class="form-group col-sm-12">
-									<!--<label for="{{field.id_for_label}}" class="text-light " >{{field.label}}</label> -->
-									{% render_field field class='form-control' placeholder=field.label %}
+			                	<div class="mb-5 text-center">
+									<button type="submit" class="btn btn-lg btn-dark btn_custom mt-3">
+									<i class="fa fa-envelope-open-o mx-2" aria-hidden="true" ></i>
+									Enviar
+									</button>
 								</div>
-							{% endfor %}
-
-					        {% if messages %}
-	                            {% for message in messages %}
-	                              <script >alert("{{message}}")</script> 
-	                            {% endfor %}
-	                        {% endif %}
-		                </div>
-
-	                	<div class="mb-5 text-center">
-							<button type="submit" class="btn btn-lg btn-dark btn_custom mt-3">
-							<i class="fa fa-envelope-open-o mx-2" aria-hidden="true" ></i>
-							Enviar
-							</button>
+							</form>
 						</div>
-
-					</form>
-
+					</div>
 				</div>
-
 			</div>
-
-
 		</div>
-
 	</div>
 
 <script src="{% static 'node_modules/jquery/dist/jquery.js' %}"></script>

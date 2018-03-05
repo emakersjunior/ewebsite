@@ -4,7 +4,7 @@ from django.core.mail.message import EmailMessage
 from django.conf import settings
 from django.http import HttpResponse
 from django.template import Context, loader
-from django.db.models import Q	
+from django.db.models import Q 
 
 from .models import *
 
@@ -92,8 +92,8 @@ def blog_post(request, titulo):
 	return render(request, 'core/blog_post.html', context=context)
 
 def pesquisa_blog(request):
-	query = request.GET.get('q') # pega o value do html
-	erro = ''
+	query = request.GET.get('q') # pega o input value do html
+	resp = 'Resultados: '
 	if query:
 		resultado = Postagem.objects.filter(Q(titulo__icontains=query) |
 									    Q(texto__icontains=query) |
@@ -102,10 +102,10 @@ def pesquisa_blog(request):
 		resultado = Postagem.objects.order_by('data_publicacao')
 
 	if not resultado:
-		erro = "Sua pesquisa '" + query + "' não foi encontrada."
+		resp = "Sua pesquisa '" + query + "' não foi encontrada."
 
 	context ={
 		'resultado': resultado,
-		'erro': erro,
+		'resp': resp,
 	}							
 	return render(request, 'core/pesquisa.html', context=context)

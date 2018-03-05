@@ -14,449 +14,72 @@
 		<div class="container" >
 			
 			<div class="row">
-				
 				<div class="col-12 text-center mt-5 mb-5">
-					
 					<h1 class="display-1 roxo">EMakers</h1>
 					<p>Este é o primeiro website do núcleo de estudos em Sistemas Embarcados, <i>Internet das coisas</i> e Otimização. </p>
-
 				</div>
-
 			</div>
-
-
 
 <!-- #################### CARDS #################### -->
-	<div class="bg_roxo text-center box_generic">
-		<br> <br>
-		<div class="mb-5">
+			<div class="bg_roxo text-center box_generic">
+				<br> <br>
+				<div class="mb-5">
+					<h1 class="display-3 text-light ">Quem somos?</h1>
+					<p class="lead text-light"> Professores, alunos e contribuintes!</p>	
+				</div>		
 
-			<h1 class="display-3 text-light ">Quem somos?</h1>
+				<!-- PROFESSORES -->
+				<div class="mb-5">
+					<h3 class="text-light display-4">  <i class="fa fa-graduation-cap" aria-hidden="true"></i> Professores e Técnicos</h3>
+				</div>
 
-			<p class="lead text-light"> Professores, alunos e contribuintes!</p>	
+				<div class="row my-4 mb-5 justify-content-center">
+					{% for d in docentes_ta %}
+					<div class="col-lg-3 col-md-4 col-sm-6 card-deck">
+						<div class="card ml-4 mr-4 mb-4">
+							<div class="mx-2 mt-4">
+								<i class="fa fa-user-circle fa-5x" aria-hidden="true"></i>
+							</div>
+							
+							<div class="card-body">
+								<h4 class="card-title">{{d.nome}}</h4>
+								<h6 class="subtitle text-muted">{{d.cargo}}</h6>
+								<div class="mt-4">
+									<a href="#" class="text-dark"><i class="fa fa-linkedin-square fa-4x" aria-hidden="true"></i></a>	
+								</div>
+							</div>
 
-		</div>		
+						</div>
+					</div>
+					{% endfor %}
+				</div>	
 
-<!-- PROFESSORES -->
-		<div class="mb-5">
-			
-			<h3 class="text-light display-4">  <i class="fa fa-graduation-cap" aria-hidden="true"></i> Professores e Técnicos</h3>
+				<!-- ALUNOS -->
+				<div class="mb-5">
+					<h3 class="text-light display-4 mt-5"> <i class="fa fa-users" aria-hidden="true"></i>  Alunos </h3>
+				</div>
 
+				<div class="row my-4 mb-5 justify-content-center">
+					{% for a in alunos %}
+					<div class="col-lg-3 col-md-4 col-sm-6 card-deck">
+						<div class="card ml-4 mr-4 mb-4">
+							<div class="mx-2 mt-4">
+								<i class="fa fa-user-circle fa-5x" aria-hidden="true"></i>
+							</div>
+							
+							<div class="card-body">
+								<h4 class="card-title">{{a.nome}}</h4>
+								<h6 class="subtitle text-muted">{{a.cargo}}</h6>
+								<div class="mt-4">
+									<a href="#" class="text-dark"><i class="fa fa-linkedin-square fa-4x" aria-hidden="true"></i></a>	
+								</div>
+							</div>
+						</div>
+					</div>
+					{% endfor %}
+				</div> 
+			</div>
 		</div>
-
-		<div class="row my-4 mb-5 justify-content-center">
-				
-			<div class="col-lg-3 col-md-4 col-sm-6">
-				
-				<div class="card ml-4">
-					
-					<div class="mx-2 mt-4">
-					
-						<i class="fa fa-user-circle fa-5x" aria-hidden="true"></i>
-					
-					</div>
-					
-					<div class="card-body">
-
-						<h4 class="card-title">{{docentes_ta.0.nome}}</h4>
-						
-						<h6 class="subtitle text-muted">{{docentes_ta.0.cargo}}</h6>
-						
-						<div class="mt-4">
-
-							<a href="#" class="text-dark"><i class="fa fa-linkedin-square fa-4x" aria-hidden="true"></i></a>	
-
-						</div>
-
-					</div>
-
-				</div>
-
-			</div>
-
-			<div class="col-lg-3 col-md-4 col-sm-6">
-				
-				<div class="card mr-lg-2 mr-md-2 mr-sm-4 ml-lg-3 ml-md-3 ml-sm-0">
-					
-					<div class="mx-2 mt-4">
-					
-						<i class="fa fa-user-circle fa-5x" aria-hidden="true"></i>
-					
-					</div>
-
-					<div class="card-body">
-
-						<h4 class="card-title"> William</h4>
-						
-						<h6 class="subtitle text-muted">?</h6>
-						
-						<div class="mt-4">
-
-							<a href="#" class="text-dark"><i class="fa fa-linkedin-square fa-4x" aria-hidden="true"></i></a>	
-
-						</div>
-
-					</div>
-
-				</div>
-
-			</div>
-
-			<div class="col-lg-3 col-md-4 col-sm-6">
-				
-				<div class="card mr-lg-3 mr-md-4 mr-sm-0 ml-lg-2 ml-md-0 ml-sm-4 mt-sm-4 mt-lg-0 mt-md-0">
-					
-					<div class="mx-2 mt-4">
-					
-						<i class="fa fa-user-circle fa-5x" aria-hidden="true"></i>
-					
-					</div>
-
-					<div class="card-body">
-
-						<h4 class="card-title"> Adalberto</h4>
-						
-						<h6 class="subtitle text-muted">?</h6>
-						
-						<div class="mt-4">
-
-							<a href="#" class="text-dark"><i class="fa fa-linkedin-square fa-4x" aria-hidden="true"></i></a>	
-
-						</div>
-
-					</div>
-
-				</div>
-
-			</div>
-			<div class="col-lg-3 col-md-4 col-sm-6">
-				
-				<div class="card mr-lg-4 mr-md-2 mr-sm-4  ml-lg-0  ml-md-3 ml-sm-0  mt-sm-4 mt-lg-0 mt-md-4  ">
-					
-					<div class="mx-2 mt-4">
-					
-						<i class="fa fa-user-circle fa-5x" aria-hidden="true"></i>
-					
-					</div>
-
-					<div class="card-body">
-
-						<h4 class="card-title"> Paulo A.</h4>
-						
-						<h6 class="subtitle text-muted">?</h6>
-						
-						<div class="mt-4">
-
-							<a href="#" class="text-dark"><i class="fa fa-linkedin-square fa-4x" aria-hidden="true"></i></a>	
-
-						</div>
-
-					</div>
-
-				</div>
-
-			</div>
-
-		</div>
-
-<!-- ALUNOS -->
-		<div class="mb-5">
-			
-			<h3 class="text-light display-4 mt-5"> <i class="fa fa-users" aria-hidden="true"></i>  Alunos </h3>
-
-		</div>
-
-		<div class="row my-4 mb-5 justify-content-center">
-				
-			<div class="col-lg-3 col-md-4 col-sm-6">
-				
-				<div class="card ml-4">
-					
-					<div class="mx-2 mt-4">
-					
-						<i class="fa fa-user-circle fa-5x" aria-hidden="true"></i>
-					
-					</div>
-					
-					<div class="card-body">
-
-						<h4 class="card-title">{{alunos.0.nome}}</h4>
-						
-						<h6 class="subtitle text-muted">{{alunos.0.cargo}}</h6>
-						
-						<div class="mt-4">
-
-							<a href="#" class="text-dark"><i class="fa fa-linkedin-square fa-4x" aria-hidden="true"></i></a>	
-
-						</div>
-
-					</div>
-
-				</div>
-
-			</div>
-
-			<div class="col-lg-3 col-md-4 col-sm-6">
-				
-				<div class="card mr-lg-2 mr-md-2 mr-sm-4 ml-lg-3 ml-md-3 ml-sm-0">
-					
-					<div class="mx-2 mt-4">
-					
-						<i class="fa fa-user-circle fa-5x" aria-hidden="true"></i>
-					
-					</div>
-
-					<div class="card-body">
-
-						<h4 class="card-title">{{alunos.1.nome}}</h4>
-						
-						<h6 class="subtitle text-muted">{{alunos.1.cargo}}</h6>
-						
-						<div class="mt-4">
-
-							<a href="#" class="text-dark"><i class="fa fa-linkedin-square fa-4x" aria-hidden="true"></i></a>	
-
-						</div>
-
-					</div>
-
-				</div>
-
-			</div>
-
-			<div class="col-lg-3 col-md-4 col-sm-6">
-				
-				<div class="card mr-lg-3 mr-md-4 mr-sm-0 ml-lg-2 ml-md-0 ml-sm-4 mt-sm-4 mt-lg-0 mt-md-0">
-					
-					<div class="mx-2 mt-4">
-					
-						<i class="fa fa-user-circle fa-5x" aria-hidden="true"></i>
-					
-					</div>
-
-					<div class="card-body">
-
-						<h4 class="card-title"> Franciscone</h4>
-						
-						<h6 class="subtitle text-muted"> Diretor GP</h6>
-						
-						<div class="mt-4">
-
-							<a href="#" class="text-dark"><i class="fa fa-linkedin-square fa-4x" aria-hidden="true"></i></a>	
-
-						</div>
-
-					</div>
-
-				</div>
-
-			</div>
-			<div class="col-lg-3 col-md-4 col-sm-6">
-				
-				<div class="card mr-lg-4 mr-md-2 mr-sm-4  ml-lg-0  ml-md-3 ml-sm-0  mt-sm-4 mt-lg-0 mt-md-4  ">
-					
-					<div class="mx-2 mt-4">
-					
-						<i class="fa fa-user-circle fa-5x" aria-hidden="true"></i>
-					
-					</div>
-
-					<div class="card-body">
-
-						<h4 class="card-title"> Guilherme</h4>
-						
-						<h6 class="subtitle text-muted">Diretor Eventos</h6>
-						
-						<div class="mt-4">
-
-							<a href="#" class="text-dark"><i class="fa fa-linkedin-square fa-4x" aria-hidden="true"></i></a>	
-
-						</div>
-
-					</div>
-
-				</div>
-
-			</div>
-
-		</div>
-
-		<div class="row my-4 mb-5 justify-content-center">
-				
-			<div class="col-lg-3 col-md-4 col-sm-6">
-				
-				<div class="card ml-4">
-					
-					<div class="mx-2 mt-4">
-					
-						<i class="fa fa-user-circle fa-5x" aria-hidden="true"></i>
-					
-					</div>
-					
-					<div class="card-body">
-
-						<h4 class="card-title"> Matheus</h4>
-						
-						<h6 class="subtitle text-muted">Diretor Marketing </h6>
-						
-						<div class="mt-4">
-
-							<a href="#" class="text-dark"><i class="fa fa-linkedin-square fa-4x" aria-hidden="true"></i></a>	
-
-						</div>
-
-					</div>
-
-				</div>
-
-			</div>
-
-			<div class="col-lg-3 col-md-4 col-sm-6">
-				
-				<div class="card mr-lg-2 mr-md-2 mr-sm-4 ml-lg-3 ml-md-3 ml-sm-0">
-					
-					<div class="mx-2 mt-4">
-					
-						<i class="fa fa-user-circle fa-5x" aria-hidden="true"></i>
-					
-					</div>
-
-					<div class="card-body">
-
-						<h4 class="card-title"> Igor Torati</h4>
-						
-						<h6 class="subtitle text-muted">Membro</h6>
-						
-						<div class="mt-4">
-
-							<a href="#" class="text-dark"><i class="fa fa-linkedin-square fa-4x" aria-hidden="true"></i></a>	
-
-						</div>
-
-					</div>
-
-				</div>
-
-			</div>
-
-			<div class="col-lg-3 col-md-4 col-sm-6">
-				
-				<div class="card mr-lg-3 mr-md-4 mr-sm-0 ml-lg-2 ml-md-0 ml-sm-4 mt-sm-4 mt-lg-0 mt-md-0">
-					
-					<div class="mx-2 mt-4">
-					
-						<i class="fa fa-user-circle fa-5x" aria-hidden="true"></i>
-					
-					</div>
-
-					<div class="card-body">
-
-						<h4 class="card-title"> Isaías</h4>
-						
-						<h6 class="subtitle text-muted">Membro</h6>
-						
-						<div class="mt-4">
-
-							<a href="#" class="text-dark"><i class="fa fa-linkedin-square fa-4x" aria-hidden="true"></i></a>	
-
-						</div>
-
-					</div>
-
-				</div>
-
-			</div>
-			<div class="col-lg-3 col-md-4 col-sm-6">
-				
-				<div class="card mr-lg-4 mr-md-2 mr-sm-4  ml-lg-0  ml-md-3 ml-sm-0  mt-sm-4 mt-lg-0 mt-md-4  ">
-					
-					<div class="mx-2 mt-4">
-					
-						<i class="fa fa-user-circle fa-5x" aria-hidden="true"></i>
-					
-					</div>
-
-					<div class="card-body">
-
-						<h4 class="card-title"> Pedro Pio</h4>
-						
-						<h6 class="subtitle text-muted">Membro</h6>
-						
-						<div class="mt-4">
-
-							<a href="#" class="text-dark"><i class="fa fa-linkedin-square fa-4x" aria-hidden="true"></i></a>	
-
-						</div>
-
-					</div>
-
-				</div>
-
-			</div>
-
-		</div>
-
-		<div class="row my-4 mb-5 justify-content-center">
-				
-			<div class="col-lg-3 col-md-4 col-sm-6">
-				
-				<div class="card ml-3 mr-2">
-					
-					<div class="mx-2 mt-4">
-					
-						<i class="fa fa-user-circle fa-5x" aria-hidden="true"></i>
-					
-					</div>
-					
-					<div class="card-body">
-
-						<h4 class="card-title"> Vinicius Pimenta</h4>
-						
-						<h6 class="subtitle text-muted">Membro</h6>
-						
-						<div class="mt-4">
-
-							<a href="#" class="text-dark"><i class="fa fa-linkedin-square fa-4x" aria-hidden="true"></i></a>	
-
-						</div>
-
-					</div>
-
-				</div>
-
-			</div>
-
-			<div class="col-lg-3 col-md-4 col-sm-6">
-				
-				<div class="card mr-lg-3 mr-md-2 mr-sm-4 ml-lg-2 ml-md-3 ml-sm-0 mb-5">
-					
-					<div class="mx-2 mt-4">
-					
-						<i class="fa fa-user-circle fa-5x" aria-hidden="true"></i>
-					
-					</div>
-
-					<div class="card-body">
-
-						<h4 class="card-title"> William Abreu</h4>
-						
-						<h6 class="subtitle text-muted">Membro</h6>
-						
-						<div class="mt-4">
-
-							<a href="#" class="text-dark"><i class="fa fa-linkedin-square fa-4x" aria-hidden="true"></i></a>	
-
-						</div>
-
-					</div>
-
-				</div>
-
-			</div>
-
-		</div>
-
-
 	</div>
 
 <script src="{% static 'node_modules/jquery/dist/jquery.js' %}"></script>

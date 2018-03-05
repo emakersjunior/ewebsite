@@ -7,11 +7,18 @@
 {% include 'core/common/header_blog.html' %}
 
 {% if resultado %}
-	{% for r in resultado %}
-		<a href="{% url 'blog_post' r %}">{{r}}</a>
-	{% endfor %}
+	<h1>{{ resp }}</h1>
+		<div class="row">
+			<div class="col-lg-8">
+				{% for r in resultado %}
+					<div class="container">
+						<a href="{% url 'blog_post' r %}">{{r}}</a>
+					</div>
+				{% endfor %}
+			</div>
+		</div>
 {% else %}
-	{{ erro }}
+	<h1>{{ resp }}</h1>
 {% endif %}
 
 <!-- Footer -->
