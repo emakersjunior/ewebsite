@@ -45,8 +45,8 @@
                     </div>
                 </div>
             </div>
-            {% endfor %}
 
+            {% if p.titulo == postagens.0.titulo %}
             <!-- Sidebar Widgets Column -->
             <div class="col-md-4">
                 <!-- Categories Widget -->
@@ -94,6 +94,9 @@
                     </div>
                 </div>
             </div>
+            {% endif %}
+
+            {% endfor %}
 
         </div>
         <!-- /.row -->

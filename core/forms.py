@@ -9,4 +9,5 @@ class ContatoForm(forms.Form):
 # utilizar model form depois
 class ComentarioForm(forms.Form):
 	nome = forms.CharField(label='* Nome', required=True)
+	email = forms.CharField(label='* E-mail', required=True)
 	comentario = forms.CharField(label='* Comentário', widget=forms.Textarea(), required=True)

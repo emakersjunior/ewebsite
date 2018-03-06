@@ -6,6 +6,8 @@ from django.http import HttpResponse
 from django.template import Context, loader
 from django.db.models import Q 
 
+from datetime import datetime
+
 from .models import *
 
 from .forms import *
@@ -54,8 +56,8 @@ def contato(request):
 
 def equipe(request):
 	context = {
-		'alunos': Aluno.objects.order_by('pos_cargo'),
-		'docentes_ta': Docente_ta.objects.order_by('pos_cargo'),
+		'alunos': Equipe.objects.filter(tipo_cargo='Discente').order_by('pos_cargo'),
+		'docentes_ta': Equipe.objects.filter(tipo_cargo='Doscente').order_by('pos_cargo'),
 	}	
 	return render(request, 'core/equipe.html', context=context)
 
@@ -73,8 +75,11 @@ def blog_post(request, titulo):
 		if form.is_valid():
 			nome = form.cleaned_data['nome']
 			comentario = form.cleaned_data['comentario']
+			email = form.cleaned_data['email']
+			data_comentario = datetime.now()
 			comentario_post = Comentario(post_comentado=postagem, 
-										nome=nome, 
+										nome=nome, email=email,
+										data_comentario= data_comentario,
 										comentario=comentario) # salva no bd comentario, com a postagem clicada
 			comentario_post.save()
 		context = {
@@ -84,9 +89,11 @@ def blog_post(request, titulo):
 		return redirect('blog_post', titulo=titulo) # redireciona para a mesma pag att com o novo comentario
 	else:
 		comentarios = Comentario.objects.filter(post_comentado=postagem.pk)
+		qt_comentarios = Comentario.objects.filter(post_comentado=postagem.pk).count()
 		context = {
 			'postagem': postagem,
 			'comentarios': comentarios,
+			'qt_comentarios': qt_comentarios,
 			'form': form,
 		}
 	return render(request, 'core/blog_post.html', context=context)
@@ -97,7 +104,7 @@ def pesquisa_blog(request):
 	if query:
 		resultado = Postagem.objects.filter(Q(titulo__icontains=query) |
 									    Q(texto__icontains=query) |
-									    Q(autor__icontains=query))
+									    Q(autor__nome__icontains=query))
 	else:
 		resultado = Postagem.objects.order_by('data_publicacao')
 

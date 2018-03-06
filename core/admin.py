@@ -13,11 +13,8 @@ class ServicoAdmin(admin.ModelAdmin):
 class PortfolioAdmin(admin.ModelAdmin):
 	list_display = ('nome',)
 
-class AlunoAdmin(admin.ModelAdmin):
-	list_display = ('nome', 'cargo',)
-
-class Docente_taAdmin(admin.ModelAdmin):
-	list_display = ('nome', 'cargo',)
+class EquipeAdmin(admin.ModelAdmin):
+	list_display = ('nome', 'tipo_cargo', 'cargo')
 
 class PostagemAdmin(admin.ModelAdmin):
 	list_display = ('titulo', 'autor',)
@@ -30,7 +27,6 @@ admin.site.register(Servico, ServicoAdmin)
 admin.site.register(Texto_modal)
 admin.site.register(Img_texto)
 admin.site.register(Portfolio, PortfolioAdmin)
-admin.site.register(Aluno, AlunoAdmin)
-admin.site.register(Docente_ta, Docente_taAdmin)
+admin.site.register(Equipe, EquipeAdmin)
 admin.site.register(Postagem, PostagemAdmin)
 admin.site.register(Comentario, ComentarioAdmin)

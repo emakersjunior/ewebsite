@@ -48,23 +48,43 @@ class Portfolio(models.Model):
 	def __str__(self):
 		return self.nome
 
+
+'''INSERT INTO cargo (id,cargo) VALUES (3,"diretor_projetos");
+INSERT INTO cargo (id,cargo) VALUES (4,"diretor_negócios");
+INSERT INTO cargo (id,cargo) VALUES (5,"diretor_pi");
+INSERT INTO cargo (id,cargo) VALUES (6,"membro");
+INSERT INTO cargo (id,cargo) VALUES (2,"diretor_presidente");
+INSERT INTO cargo (id,cargo) VALUES (1,"coordenador");
+INSERT INTO cargo (id,cargo) VALUES (8,"coordenador_aux");
+INSERT INTO cargo (id,cargo) VALUES (7,"tecnico");'''
+
 # Equipe
-class Aluno(models.Model):
+class Equipe(models.Model):
+	TIPO_CARGO_CHOICE = (
+		('Doscente', 'Doscente'),
+		('Discente', 'Discente')
+	)
+
+	CARGO_CHOICE = (
+		('Coordenador', 'Coordenador'),
+		('Presidente', 'Presidente'),
+		('Diretor de Projetos', 'Diretor de Projetos'),
+		('Diretor de Negócios', 'Diretor de Negócios'),
+	)
+
+	POS_CARGO_CHOICE = (
+		(1, 'Coordenador'),
+		(2, 'Presidente'),
+		(3, 'Diretor de Projetos'),
+		(4, 'Diretor de Negócios'),
+	)
+
 	nome = models.CharField(max_length=20)
-	cargo = models.CharField(max_length=20)
-	pos_cargo = models.IntegerField(default=0)
+	tipo_cargo = models.CharField(max_length=20, choices=TIPO_CARGO_CHOICE)
+	cargo = models.CharField(max_length=20, choices=CARGO_CHOICE)
+	pos_cargo = models.IntegerField(choices=POS_CARGO_CHOICE)
+	sobre = models.TextField()
 	imagem = StdImageField(null=True,blank=True, upload_to=UploadToUUID(path='equipe/aluno'), variations={'normal': (1900, 550, True)})
-	linkedin = models.CharField(max_length=100)
-	github = models.CharField(max_length=100)
-
-	def __str__(self):
-		return self.nome
-
-class Docente_ta(models.Model):
-	nome = models.CharField(max_length=20)
-	cargo = models.CharField(max_length=20)
-	pos_cargo = models.IntegerField(default=0)
-	imagem = StdImageField(null=True,blank=True, upload_to=UploadToUUID(path='equipe/docente_ta'), variations={'normal': (1900, 550, True)})
 	linkedin = models.CharField(max_length=100)
 	github = models.CharField(max_length=100)
 
@@ -74,7 +94,7 @@ class Docente_ta(models.Model):
 #Postagens do blog
 class Postagem(models.Model):
 	titulo = models.CharField('Título', max_length=100)
-	autor = models.CharField(max_length=20)
+	autor = models.ForeignKey(Equipe, on_delete=models.DO_NOTHING)
 	data_publicacao = models.DateTimeField(blank=True, null=True)
 	imagem = StdImageField(null=True,blank=True, upload_to=UploadToUUID(path='postagens/'), variations={'normal': (1900, 550, True)})
 	texto = models.TextField()
@@ -90,6 +110,8 @@ class Postagem(models.Model):
 class Comentario(models.Model):
 	post_comentado = models.ForeignKey(Postagem, on_delete=models.DO_NOTHING)
 	nome = models.CharField(max_length=50)
+	email = models.CharField(max_length=50)
+	data_comentario = models.DateTimeField(blank=True, null=True)
 	comentario = models.TextField()
 
 	def __str__(self):

@@ -36,10 +36,44 @@
                 <!-- Preview Image -->
                 <img class="img-fluid rounded" src="{{ postagem.imagem.normal.url }}" alt="">
 
-                <hr>
                 <!-- Post Content -->
                 <p class="lead">{{ postagem.texto }}</p>
                 <hr>
+
+                <p>&nbsp;</p>
+                <h4>Sobre o autor</h4>
+                <div class="media box">
+                    <div class="pull-left">
+                        <img class="d-flex mr-3 rounded-circle" src="http://placehold.it/50x50" alt="">
+                    </div>
+
+                    <div class="media-body">
+                        <h5>{{postagem.autor}}</h5>
+                        <p>{{postagem.autor.sobre}}</p>
+                    </div>
+                </div>
+
+                <!-- Comentarios -->
+                <div class="container mt-5">
+                    {% if qt_comentarios == 1 %}
+                    <h5>{{ qt_comentarios }} comentário</h5>
+                    {% else %}
+                    <h5>{{ qt_comentarios }} comentários</h5>
+                    {% endif %}                   
+                
+                    <!-- Single Comment -->
+                    {% for comentario in comentarios %}
+                    <div class="media mb-4 mt-4">
+                        <img class="d-flex mr-3 rounded-circle" src="http://placehold.it/50x50" alt="">
+                        <div class="media-body">
+                            <h5>{{ comentario.nome }}</h5>
+                            <small>{{ comentario.data_comentario }}</small>
+                            <p>{{ comentario.comentario }}</p>
+                        </div>
+                    </div>
+                    <hr>
+                    {% endfor %}
+                </div>
 
                 <!-- Comments Form -->
                 <div class="card my-4">
@@ -51,6 +85,9 @@
                                 {% render_field form.nome class='form-control' placeholder=form.nome.label %}
                             </div>
                             <div class="form-group">
+                                {% render_field form.email class='form-control' placeholder=form.email.label %}
+                            </div>
+                            <div class="form-group">
                                 {% render_field form.comentario class='form-control' placeholder=form.comentario.label rows="3" %}
                             </div>
                             <button type="submit" class="btn btn-dark box_generic">Enviar</button>
@@ -58,16 +95,7 @@
                     </div>
                 </div>
 
-                <!-- Single Comment -->
-                {% for comentario in comentarios %}
-                <div class="media mb-4">
-                    <img class="d-flex mr-3 rounded-circle" src="http://placehold.it/50x50" alt="">
-                    <div class="media-body">
-                        <h5 class="mt-0">{{ comentario.nome }}</h5>
-                        {{ comentario.comentario }}
-                    </div>
-                </div>
-                {% endfor %}
+
             </div>
 
             <!-- Sidebar Widgets Column -->
