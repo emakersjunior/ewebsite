@@ -1,0 +1,10 @@
+Django==2.0.2
+django-stdimage==3.0.0
+django-widget-tweaks==1.4.1
+Pillow==5.0.0
+pkg-resources==0.0.0
+progressbar2==3.35.2
+psycopg2==2.7.4
+python-utils==2.3.0
+pytz==2018.3
+six==1.11.0
