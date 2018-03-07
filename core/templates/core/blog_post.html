@@ -15,7 +15,7 @@
         <div class="row">
 
             <!-- Post Content Column -->
-            <div class="col-lg-8">
+            <div class="col-md-8 order-1">
 
                 <!-- Title -->
                 <h1 class="mt-4">{{ postagem.titulo }}</h1>
@@ -42,13 +42,13 @@
 
                 <p>&nbsp;</p>
                 <h4>Sobre o autor</h4>
-                <div class="media box">
-                    <div class="pull-left">
-                        <img class="d-flex mr-3 rounded-circle" src="http://placehold.it/50x50" alt="">
+                <div class="media rounded mt-4 mr-4">
+                    <div class="media-left">
+                        <img class="d-flex mr-3 rounded media-object" src="http://placehold.it/100x100" alt="">
                     </div>
 
                     <div class="media-body">
-                        <h5>{{postagem.autor}}</h5>
+                        <h5 class="media-heading">{{postagem.autor}}</h5>
                         <p>{{postagem.autor.sobre}}</p>
                     </div>
                 </div>
@@ -64,9 +64,12 @@
                     <!-- Single Comment -->
                     {% for comentario in comentarios %}
                     <div class="media mb-4 mt-4">
-                        <img class="d-flex mr-3 rounded-circle" src="http://placehold.it/50x50" alt="">
+                        <div class="media-left">
+                            <img class="d-flex mr-3 rounded-circle" src="http://placehold.it/60x60" alt=""> 
+                        </div>
+
                         <div class="media-body">
-                            <h5>{{ comentario.nome }}</h5>
+                            <h5 class="media-heading">{{ comentario.nome }}</h5>
                             <small>{{ comentario.data_comentario }}</small>
                             <p>{{ comentario.comentario }}</p>
                         </div>
@@ -94,12 +97,10 @@
                         </form>
                     </div>
                 </div>
-
-
             </div>
 
             <!-- Sidebar Widgets Column -->
-            <div class="col-md-4">
+            <div class="col-md-4 order-md-2">
                 <!-- Categories Widget -->
                 <div class="card my-4">
                     <h5 class="card-header bg_roxo text-light">Categorias</h5>

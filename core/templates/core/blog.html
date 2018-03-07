@@ -13,8 +13,8 @@
         <div class="row">
 
             <!-- Post Content Column -->
-            {% for p in postagens %}
-            <div class="col-lg-8">
+            <div class="col-lg-8 order-1">
+                {% for p in postagens %}
                 <div class="card mb-4 mt-2">
                     <div class="card-body">
                     <!-- Title -->
@@ -44,11 +44,11 @@
                         <a class="btn btn-link roxo" href="{{ p.get_absolute_url }}">Leia mais ></a>
                     </div>
                 </div>
+                {% endfor %}
             </div>
 
-            {% if p.titulo == postagens.0.titulo %}
             <!-- Sidebar Widgets Column -->
-            <div class="col-md-4">
+            <div class="col-lg-4 order-lg-2">
                 <!-- Categories Widget -->
                 <div class="card my-4">
                     <h5 class="card-header bg_roxo text-light">Categorias</h5>
@@ -94,10 +94,6 @@
                     </div>
                 </div>
             </div>
-            {% endif %}
-
-            {% endfor %}
-
         </div>
         <!-- /.row -->
     </div>

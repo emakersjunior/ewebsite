@@ -48,16 +48,6 @@ class Portfolio(models.Model):
 	def __str__(self):
 		return self.nome
 
-
-'''INSERT INTO cargo (id,cargo) VALUES (3,"diretor_projetos");
-INSERT INTO cargo (id,cargo) VALUES (4,"diretor_negócios");
-INSERT INTO cargo (id,cargo) VALUES (5,"diretor_pi");
-INSERT INTO cargo (id,cargo) VALUES (6,"membro");
-INSERT INTO cargo (id,cargo) VALUES (2,"diretor_presidente");
-INSERT INTO cargo (id,cargo) VALUES (1,"coordenador");
-INSERT INTO cargo (id,cargo) VALUES (8,"coordenador_aux");
-INSERT INTO cargo (id,cargo) VALUES (7,"tecnico");'''
-
 # Equipe
 class Equipe(models.Model):
 	TIPO_CARGO_CHOICE = (
