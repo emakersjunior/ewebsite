@@ -84,6 +84,7 @@ class Equipe(models.Model):
 #Postagens do blog
 class Postagem(models.Model):
 	titulo = models.CharField('Título', max_length=100)
+	categoria = models.CharField('Categoria', max_length=50)
 	autor = models.ForeignKey(Equipe, on_delete=models.DO_NOTHING)
 	data_publicacao = models.DateTimeField(blank=True, null=True)
 	imagem = StdImageField(null=True,blank=True, upload_to=UploadToUUID(path='postagens/'), variations={'normal': (1900, 550, True)})

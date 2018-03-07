@@ -1,28 +1,18 @@
-<!DOCTYPE html>
-<html>
-{% include 'core/common/head_blog.html' %}
-<body>
-	
-<!--       ############## NAVBAR ############### 		-->
-{% include 'core/common/header_blog.html' %}
+{% extends 'core/common/base_blog.html' %}
 
-{% if resultado %}
-	<h1>{{ resp }}</h1>
-		<div class="row">
-			<div class="col-lg-8">
-				{% for r in resultado %}
-					<div class="container">
-						<a href="{% url 'blog_post' r %}">{{r}}</a>
-					</div>
-				{% endfor %}
+{% block noticias %}
+	{% if resultado %}
+		<h2 class="mt-5">{{ resp }}</h2>
+			<div class="row">
+				<div class="col-lg-8">
+					{% for r in resultado %}
+						<div class="container">
+							<h3><a class="roxo" href="{% url 'blog_post' r %}">{{r}}</a></h3>
+						</div>
+					{% endfor %}
+				</div>
 			</div>
-		</div>
-{% else %}
-	<h1>{{ resp }}</h1>
-{% endif %}
-
-<!-- Footer -->
-{% include 'core/common/footer_blog.html' %}
-
-</body>
-</html>
+	{% else %}
+		<h2 class="mt-5">{{ resp }}</h2>
+	{% endif %}
+{% endblock %}

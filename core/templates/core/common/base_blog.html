@@ -1,0 +1,80 @@
+{% load static %}
+{% load widget_tweaks %}
+<!DOCTYPE html>
+<html>
+{% include 'core/common/head_blog.html' %}
+<body>
+
+<!--       ############## NAVBAR ############### 		-->
+{% include 'core/common/header_blog.html' %}
+
+<!--       ############## INICIO CONTEUDO ############### 		-->
+<!-- <img class="img-fluid" src="img/bg_tools.png"> -->
+	<div class="container">
+
+        <div class="row">
+
+            <!-- Post Content Column -->
+            <div class="col-md-8 order-1">
+                {% block noticias %}
+ 
+                {% endblock %}
+            </div>
+
+            <!-- Sidebar Widgets Column -->
+            <div class="col-md-4 order-md-2">
+                <div class="card my-4">
+                    <h5 class="card-header bg_roxo text-light">Categorias</h5>
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col-lg-6">
+                                <ul class="list-unstyled mb-0">
+                                    <li>
+                                        <a href="{% url 'blog_categoria' 'eletronica' %}">Eletrônica</a>
+                                    </li>
+                                    <li class="mt-2">
+                                        <a href="{% url 'blog_categoria' 'webdesign' %}">Web Design</a>
+                                    </li> 
+                                    <li class="mt-2">
+                                        <a href="{% url 'blog_categoria' 'programacao' %}">Programação</a>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="col-lg-6">
+                                <ul class="list-unstyled mb-0">
+                                    <li>
+                                        <a href="{% url 'blog_categoria' 'design' %}">Design</a>
+                                     </li>
+                                    <li class="mt-2">
+                                        <a href="{% url 'blog_categoria' 'inteligencia-computacional' %}">Inteligência Computacional</a>
+                                    </li>
+                                    <li class="mt-2">
+                                        <a href="{% url 'blog_categoria' 'softwares' %}">Softwares</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Side Widget -->
+                <div class="card my-4">
+                    <h5 class="card-header bg_roxo text-light">Cursos</h5>
+                    <div class="card-body">
+                      Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                      tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+                      quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <!-- /.row -->
+    </div>
+    <!-- /.container -->
+
+<!-- Footer -->
+{% include 'core/common/footer_blog.html' %}
+
+</body>
+</html>

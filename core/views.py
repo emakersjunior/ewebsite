@@ -62,8 +62,14 @@ def equipe(request):
 	return render(request, 'core/equipe.html', context=context)
 
 def blog(request):
+	resp = ''
+	postagens = Postagem.objects.order_by('data_publicacao')
+	if not postagens.exists():
+		postagens = False
+		resp = "Não existem postagens ainda"
 	context = {
-		'postagens': Postagem.objects.order_by('data_publicacao')
+		'postagens': postagens,
+		'resp': resp
 	}
 	return render(request, 'core/blog.html', context=context)
 
@@ -98,6 +104,18 @@ def blog_post(request, titulo):
 		}
 	return render(request, 'core/blog_post.html', context=context)
 
+def blog_categoria(request, categoria):
+	resp = ''
+	postagens = Postagem.objects.filter(categoria=categoria).order_by('data_publicacao')
+	if not postagens.exists():
+		postagens = False
+		resp = "Não existem postagens na categoria " + categoria
+	context = {
+		'postagens': postagens,
+		'resp': resp
+	}
+	return render(request, 'core/blog.html', context=context)
+
 def pesquisa_blog(request):
 	query = request.GET.get('q') # pega o input value do html
 	resp = 'Resultados: '
@@ -105,11 +123,11 @@ def pesquisa_blog(request):
 		resultado = Postagem.objects.filter(Q(titulo__icontains=query) |
 									    Q(texto__icontains=query) |
 									    Q(autor__nome__icontains=query))
+		if not resultado:
+			resp = "Sua pesquisa '" + query + "' não foi encontrada."
 	else:
-		resultado = Postagem.objects.order_by('data_publicacao')
-
-	if not resultado:
-		resp = "Sua pesquisa '" + query + "' não foi encontrada."
+		resultado = False
+		resp = 'Digite algo para pesquisar'
 
 	context ={
 		'resultado': resultado,

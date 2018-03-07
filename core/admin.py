@@ -17,7 +17,7 @@ class EquipeAdmin(admin.ModelAdmin):
 	list_display = ('nome', 'tipo_cargo', 'cargo')
 
 class PostagemAdmin(admin.ModelAdmin):
-	list_display = ('titulo', 'autor',)
+	list_display = ('titulo', 'categoria', 'autor',)
 
 class ComentarioAdmin(admin.ModelAdmin):
 	list_display = ('post_comentado','nome', 'comentario',)
