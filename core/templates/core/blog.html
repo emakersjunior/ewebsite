@@ -34,6 +34,47 @@
             </div>
         </div>
         {% endfor %}
+
+        {% if postagens.has_other_pages %}
+        <nav aria-label="Page navigation example"
+            <ul class="pagination justify-content-center">
+                {% if postagens.has_previous %}
+                    <li class="page-item">
+                        <a class="page-link" href="?page={{ postagens.previous_page_number }}">&laquo;</a>
+                    </li>
+                {% else %}
+                    <li class="page-item disabled">
+                        <a class="page-link">&laquo;</a>
+                    </li>
+                {% endif %}
+
+                {% for i in postagens.paginator.page_range %}
+                    {% if postagens.number == i %}
+                        <li class="page-item active">
+                            <a class="page-link">{{ i }} </a>
+                        </li>
+                    {% else %}
+                        <li class="page-item">
+                            <a class="page-link" href="?page={{ i }}">{{ i }}</a>
+                        </li>
+                    {% endif %}
+                {% endfor %}
+
+                {% if postagens.has_next %}
+                    <li class="page-item">
+                        <a class="page-link" href="?page={{ postagens.next_page_number }}">&raquo;</a>
+                    </li>
+                {% else %}
+                    <li class="page-item disabled">
+                        <a class="page-link">&raquo;</a>
+                    </li>
+                {% endif %}
+            </ul>
+        </nav>
+        {% endif %}
+
+        &nbsp
+
     {% else %}
         <h2 class="mt-5">{{ resp }}</h2>
     {% endif %}

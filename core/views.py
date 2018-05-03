@@ -5,6 +5,7 @@ from django.conf import settings
 from django.http import HttpResponse
 from django.template import Context, loader
 from django.db.models import Q 
+from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
 
 from datetime import datetime
 
@@ -63,14 +64,24 @@ def equipe(request):
 
 def blog(request):
 	resp = ''
+	context = {}
 	postagens = Postagem.objects.order_by('data_publicacao')
 	if not postagens.exists():
 		postagens = False
 		resp = "Não existem postagens ainda"
-	context = {
-		'postagens': postagens,
-		'resp': resp
-	}
+		context = {
+			'postagens': postagens,
+			'resp': resp
+		}
+	else:
+		paginator = Paginator(postagens, 1)
+		page = request.GET.get('page')
+		postagens = paginator.get_page(page)
+		context = {
+			'postagens': postagens,
+			'resp': resp
+		}
+
 	return render(request, 'core/blog.html', context=context)
 
                        # refente a url
@@ -106,14 +117,24 @@ def blog_post(request, titulo):
 
 def blog_categoria(request, categoria):
 	resp = ''
+	context = {}
 	postagens = Postagem.objects.filter(categoria=categoria).order_by('data_publicacao')
 	if not postagens.exists():
 		postagens = False
 		resp = "Não existem postagens na categoria " + categoria
-	context = {
-		'postagens': postagens,
-		'resp': resp
-	}
+		context = {
+			'postagens': postagens,
+			'resp': resp
+		}
+	else:
+		paginator = Paginator(postagens, 5)
+		page = request.GET.get('page')
+		pag_postagens = paginator.get_page(page)
+		context = {
+			'postagens': postagens,
+			'resp': resp,
+			'pag_postagens': pag_postagens
+		}
 	return render(request, 'core/blog.html', context=context)
 
 def pesquisa_blog(request):
