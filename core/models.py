@@ -51,22 +51,32 @@ class Portfolio(models.Model):
 # Equipe
 class Equipe(models.Model):
 	TIPO_CARGO_CHOICE = (
-		('Doscente', 'Doscente'),
+		('Docente', 'Docente'),
 		('Discente', 'Discente')
 	)
 
 	CARGO_CHOICE = (
 		('Coordenador', 'Coordenador'),
-		('Presidente', 'Presidente'),
+		('Diretor Presidente', 'Diretor Presidente'),
+		('Diretor Vice-Presidente', 'Diretor Vice-Presidente'),
 		('Diretor de Projetos', 'Diretor de Projetos'),
+		('Gerente de Projetos', 'Gerente de Projetos'),
 		('Diretor de Negócios', 'Diretor de Negócios'),
+		('Gerente de Marketing', 'Gerente de Marketing'),
+		('Diretor de Processos Internos', 'Diretor de Processos Internos'),
+		('Membro', 'Membro'),
 	)
 
 	POS_CARGO_CHOICE = (
 		(1, 'Coordenador'),
-		(2, 'Presidente'),
-		(3, 'Diretor de Projetos'),
-		(4, 'Diretor de Negócios'),
+		(2, 'Diretor Presidente'),
+		(3, 'Diretor Vice-Presidente'),
+		(4, 'Diretor de Projetos'),
+		(5, 'Gerente de Projetos'),
+		(6, 'Diretor de Negócios'),
+		(7, 'Gerente de Marketing'),
+		(8, 'Diretor de Processos Internos'),
+		(9, 'Membro'),
 	)
 
 	nome = models.CharField(max_length=20)
