@@ -64,6 +64,7 @@ class Equipe(models.Model):
 		('Diretor de Negócios', 'Diretor de Negócios'),
 		('Gerente de Marketing', 'Gerente de Marketing'),
 		('Diretor de Processos Internos', 'Diretor de Processos Internos'),
+		('Gerente de Produtos Internos', 'Gerente de Produtos Internos'),
 		('Membro', 'Membro'),
 	)
 
@@ -76,7 +77,8 @@ class Equipe(models.Model):
 		(6, 'Diretor de Negócios'),
 		(7, 'Gerente de Marketing'),
 		(8, 'Diretor de Processos Internos'),
-		(9, 'Membro'),
+		(9, 'Gerente de Processos Internos'),
+		(10, 'Membro'),
 	)
 
 	nome = models.CharField(max_length=20)

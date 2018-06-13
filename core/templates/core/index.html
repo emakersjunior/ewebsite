@@ -20,24 +20,30 @@
 			<div class="carousel-item active">
 				<img class="img-fluid d-block" src="{{destaques.0.imagem.normal.url}}">
 				<div class="carousel-caption d-none d-lg-block text-dark">
+					{% if destaques %}
 					<h1>{{ destaques.0.titulo }}</h1>
 					<p class="lead"> {{ destaques.0.descricao }} </p>
+					{% endif %}
 				</div>
 			</div>
 
 			<div class="carousel-item">
 				<img class="img-fluid d-block" src="{{destaques.1.imagem.normal.url}}">
 				<div class="carousel-caption d-none d-lg-block text-dark">
+					{% if destaques %}
 					<h1>{{ destaques.1.titulo }}</h1>
 					<p class="lead"> {{ destaques.1.descricao }}</p>
+					{% endif %}
 				</div>
 			</div>
 
 			<div class="carousel-item">
 				<img class="img-fluid d-block" src="{{destaques.2.imagem.normal.url}}">
 				<div class="carousel-caption d-none d-lg-block text-dark">
+					{% if destaques %}
 					<h1>{{ destaques.2.titulo }}</h1>
 					<p class="lead">{{ destaques.2.descricao }}</p>
+					{% endif %}
 				</div>
 			</div>
 		</div>
