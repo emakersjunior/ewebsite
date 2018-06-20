@@ -2,18 +2,13 @@
 {% load widget_tweaks %}
 <!DOCTYPE html>
 <html>
-{% include 'core/common/head_blog.html' %}
+    {% include 'core/common/head_blog.html' %}
 <body>
+    <!-- Navbar -->
+    {% include 'core/common/header_blog.html' %}
 
-<!--       ############## NAVBAR ############### 		-->
-{% include 'core/common/header_blog.html' %}
-
-<!--       ############## INICIO CONTEUDO ############### 		-->
-<!-- <img class="img-fluid" src="img/bg_tools.png"> -->
 	<div class="container">
-
         <div class="row">
-
             <!-- Post Content Column -->
             <div class="col-md-8 order-1">
                 {% block noticias %}
@@ -56,25 +51,33 @@
                         </div>
                     </div>
                 </div>
-
-                <!-- Side Widget -->
-                <div class="card my-4">
-                    <h5 class="card-header bg_roxo text-light">Cursos</h5>
-                    <div class="card-body">
-                      Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-                      tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-                      quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-                    </div>
-                </div>
             </div>
-
         </div>
-        <!-- /.row -->
     </div>
-    <!-- /.container -->
 
-<!-- Footer -->
-{% include 'core/common/footer_blog.html' %}
+    <!-- Footer -->
+    {% include 'core/common/footer_blog.html' %}
 
+    <!-- Script comentarios fb-->
+    <div id="fb-root"></div>
+    <script>
+        window.fbAsyncInit = function() {
+            FB.init({
+                appId      : 'YOUR_APP_ID', // App ID
+                channelUrl : '//WWW.YOUR_DOMAIN.COM/channel.html', // Channel File
+                status     : true, // check login status
+                cookie     : true, // enable cookies to allow the server to access the session
+                xfbml      : true  // parse XFBML
+            });
+        };
+
+        (function(d){
+            var js, id = 'facebook-jssdk', ref = d.getElementsByTagName('script')[0];
+            if (d.getElementById(id)) {return;}
+            js = d.createElement('script'); js.id = id; js.async = true;
+            js.src = "//connect.facebook.net/pt_BR/all.js";
+            ref.parentNode.insertBefore(js, ref);
+        }(document));
+    </script>
 </body>
 </html>

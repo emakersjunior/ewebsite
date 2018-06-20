@@ -39,8 +39,12 @@
             <p>{{postagem.autor.sobre}}</p>
         </div>
     </div>
+    <p>&nbsp;</p>
 
-    <!-- Comentarios -->
+    <!-- Comentarios fb-->
+    <div class="fb-comments" data-href="" data-num-posts="2" data-width="650"></div>
+
+    <!-- Comentarios 
     <div class="container mt-5">
         {% if qt_comentarios == 1 %}
         <h5>{{ qt_comentarios }} comentário</h5>
@@ -48,7 +52,6 @@
         <h5>{{ qt_comentarios }} comentários</h5>
         {% endif %}                   
     
-        <!-- Single Comment -->
         {% for comentario in comentarios %}
         <div class="media mb-4 mt-4">
             <div class="media-left">
@@ -63,9 +66,9 @@
         </div>
         <hr>
         {% endfor %}
-    </div>
+    </div>-->
 
-    <!-- Comments Form -->
+    <!-- Comments Form 
     <div class="card my-4">
         <h5 class="card-header bg_roxo text-light">Deixe um comentário:</h5>
         <div class="card-body">
@@ -83,6 +86,6 @@
                 <button type="submit" class="btn btn-dark box_generic">Enviar</button>
             </form>
         </div>
-    </div>
+    </div>-->
 {% endblock %}
 
