@@ -1,9 +1,8 @@
 {% load static %}
 
-<!--       ############## NAVBAR ############### 		-->
-<nav class="navbar fixed-top navbar-expand-lg navbar-dark bg_gradient_roxo">
-
-	<a class="collapse navbar-collapse" id="navbarImg" href="{% url 'index' %}"><img  src="{% static 'img/completa_branca_preta.png' %}" height="40em"></a>
+<!-- Navbar -->
+<nav class="navbar fixed-top navbar-expand-lg navbar-light bg-gradient-light">
+	<a class="collapse navbar-collapse" id="navbarImg" href="{% url 'index' %}"><img  src="{% static 'img/logo_emakers_preta.png' %}" height="40em"></a>
 	<div class="container">
 		<a class="navbar-brand h1 mb-0" href="{% url 'index' %}"> Home </a>
 		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSite,#navbarImg">
@@ -13,10 +12,6 @@
 		<div class="collapse navbar-collapse" id="navbarSite">
 			<ul class="navbar-nav mr-auto">
 				<li class="nav-item mr-2">
-					<a class="nav-link" href="{% url 'blog' %}">Blog</a>
-				</li>
-
-				<li class="nav-item mr-2">
 					<a class="nav-link" href="{% url 'index' %}#servicos">Serviços</a>
 				</li>
 
@@ -25,20 +20,24 @@
 				</li>
 
 				<li class="nav-item mr-2">
+					<a class="nav-link" href="{% url 'blog' %}">Blog</a>
+				</li>
+
+				<li class="nav-item mr-2">
 					<a class="nav-link" href="{% url 'equipe' %}">Equipe</a>
 				</li>
 				<li class="nav-item mr-2">
-					<a class="nav-link" href="{% url 'contato' %}">Contato</a>
+					<a class="nav-link" href="{% url 'contato' %}">Fale Conosco</a>
 				</li>
 			</ul>
-<!--
+			
 			<ul class="navbar-nav ml-auto">
-				<form class="form-inline"">
-					<input type="search" class="form-control mr-2" aria-label="Small" aria-describedby="inputGroup-sizing-sm" placeholder="Pesquisar...">
-					<button class="btn btn-light" type="Submit"> 	<img src="{% static 'img/lupa.svg' %}" height="15rem">
+				<form class="form-inline" method="get" action="{% url 'pesquisa_blog' %}">
+					<input name="q" value="{{request.GET.get}}" type="search" class="form-control mr-2" aria-label="Small" aria-describedby="inputGroup-sizing-sm" placeholder="Pesquisar...">
+					<button class="btn btn-light" type="Submit"><img src="{% static 'img/lupa.svg' %}" height="15rem">
 					</button>
 				</form>
-			</ul> -->
+			</ul>
 		</div>
 	</div>
 </nav>
