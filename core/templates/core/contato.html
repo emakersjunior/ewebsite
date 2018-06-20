@@ -1,14 +1,13 @@
 {% load static %}
-{% load widget_tweaks %} <!--server para personalizar o jinja com bootstrap -->
+{% load widget_tweaks %} <!--serve para personalizar o jinja com bootstrap -->
 <!DOCTYPE html>
 <html>
-{% include 'core/common/head.html' %}
+	{% include 'core/common/head.html' %}
 <body>
 
-<!--       ############## NAVBAR ############### 		-->
-{% include 'core/common/header.html' %}
+	<!-- Navbar -->
+	{% include 'core/common/header.html' %}
 
-<!--       ############## INICIO CONTEUDO ############### 		-->
 	<div class="d-block" style="background-image: url('{% static 'img/bg-tools.jpg' %}'); background-repeat: no-repeat;
     background-size: 100%;">
 		<div class="container" >
@@ -24,7 +23,7 @@
 
 			</div>
 
-<!-- #################### CARDS #################### -->
+			<!-- Cards -->
 			<div class="bg_roxo text-center box_generic">
 				<br> <br>
 				<div class="mb-5">

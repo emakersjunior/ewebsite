@@ -1,13 +1,13 @@
 {% load static%}
 <!DOCTYPE html>
 <html>
-{% include 'core/common/head.html' %}
+	{% include 'core/common/head.html' %}
 <body>
 
-<!--       ############## NAVBAR ############### 		-->
-{% include 'core/common/header.html' %}
+	<!-- Navbar -->
+	{% include 'core/common/header.html' %}
 
-<!--       ############## CAROUSEL ############### 		-->
+	<!-- Carousel-->
 	<div id="carouselId" class="carousel slide" data-ride="carousel">
 		
 		<ol class="carousel-indicators">
@@ -59,8 +59,6 @@
 		</a>
 	</div>
 
-<!--       ############## INICIO CONTEUDO ############### 		-->
-<!-- <img class="img-fluid" src="img/bg_tools.png"> -->
 	<div class="d-block" style="background-image: url('{% static 'img/bg-tools.jpg' %}'); background-repeat: no-repeat;
     background-size: 100%;">
 		<div class="container">
@@ -71,10 +69,6 @@
 					<p class="lead">Este é o primeiro website do núcleo de estudos em Sistemas Embarcados, <i>Internet das coisas</i> e Otimização. </p>
 				</div>
 			</div>
-
-	<!--       ############## SCROLLSPY ############### 		-->
-
-	<!--       ARRUMAR RESPONSIVIDADE -> MENU HORIZONTAL COM NAV BAR 		-->
 
 			<div class="row mb-1">
 				<div class="col-sm-6 col-md-4 mb-2">
@@ -147,7 +141,7 @@
 		</div>
 	</div>
 
-<!-- #################### CARDS #################### -->
+	<!-- Cards  -->
 	<div class="bg_roxo text-center" id="servicos">
 		<br> <br>
 		<div class="mb-5">
@@ -190,7 +184,7 @@
 	</div>
 
 
-<!-- ##################### JUMBOTRON ########################## -->
+	<!-- Jumbotron -->
 	<div class="jumbotron jumbotron-fluid bg-white" id="portfolio">
 		<div class="container">
 
@@ -253,7 +247,7 @@
 	</div>
 
 
-	<!-- ###################### FOOTER ######################## -->
+	<!-- Footer -->
 	<div class="bg-dark text-light justify-content-center text-center">
 		<div class="container">
 			<div class="row">
@@ -302,7 +296,7 @@
 	</div>
 
 
-	<!-- ############## MODALS ################# -->
+	<!-- Modal -->
 	{% for s in servicos %}
 	<div class="modal fade" id="{{s.modal}}" role="dialog">
 		<div class="modal-dialog" role="document">

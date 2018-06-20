@@ -1,14 +1,12 @@
 {% load static %}
 <!DOCTYPE html>
 <html>
-{% include 'core/common/head.html' %}
+	{% include 'core/common/head.html' %}
 <body>
 
-<!--       ############## NAVBAR ############### 		-->
-{% include 'core/common/header.html' %}
+	<!-- Navbar -->
+	{% include 'core/common/header.html' %}
 
-<!--       ############## INICIO CONTEUDO ############### 		-->
-<!-- <img class="img-fluid" src="img/bg_tools.png"> -->
 	<div class="d-block" style="background-image: url('{% static 'img/bg-tools.jpg' %}'); background-repeat: no-repeat;
     background-size: 100%;">
 		<div class="container" >
@@ -20,7 +18,7 @@
 				</div>
 			</div>
 
-<!-- #################### CARDS #################### -->
+			<!-- Cards -->
 			<div class="bg_roxo text-center box_generic">
 				<br> <br>
 				<div class="mb-5">
@@ -28,7 +26,7 @@
 					<p class="lead text-light"> Professores, alunos e contribuintes!</p>	
 				</div>		
 
-				<!-- PROFESSORES -->
+				<!-- Professores -->
 				<div class="mb-5">
 					<h3 class="text-light display-4">  <i class="fa fa-graduation-cap" aria-hidden="true"></i> Professores e Técnicos</h3>
 				</div>
@@ -54,7 +52,7 @@
 					{% endfor %}
 				</div>	
 
-				<!-- ALUNOS -->
+				<!-- Alunos -->
 				<div class="mb-5">
 					<h3 class="text-light display-4 mt-5"> <i class="fa fa-users" aria-hidden="true"></i>  Alunos </h3>
 				</div>
