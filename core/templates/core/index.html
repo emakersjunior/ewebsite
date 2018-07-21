@@ -59,18 +59,17 @@
 		</a>
 	</div>
 
-	<div class="d-block" style="background-image: url('{% static 'img/bg-tools.jpg' %}'); background-repeat: no-repeat;
-    background-size: 100%;">
+	<div class="row">
+		<div class="col-12 text-center mt-5 mb-5">
+			<h1 class="display-4 roxo">EMakers Júnior</h1>
+			<p>Este é o primeiro website da nova empresa júnior do Departamento de Ciência da Computação da UFLA</p>
+		</div>
+	</div>
+
+	<div class="d-block">
 		<div class="container">
 			
-			<div class="row">
-				<div class="col-12 text-center mt-5 mb-5">
-					<h1 class="display-1 roxo">EMakers</h1>
-					<p class="lead">Este é o primeiro website do núcleo de estudos em Sistemas Embarcados, <i>Internet das coisas</i> e Otimização. </p>
-				</div>
-			</div>
-
-			<div class="row mb-1">
+			<!-- <div class="row mb-1">
 				<div class="col-sm-6 col-md-4 mb-2">
 					<nav id="navbarVert" class=" navbar navbar-light flex-column bg-light box_roxo">
 						<nav class=" nav nav-pills flex-column">
@@ -87,7 +86,7 @@
 				</div>
 
 				<div class="col-sm-6 col-md-8 mb-5 bg_white" >
-					<div class="scrollspySite bg-white my-3 ml-3"  data-spy="scroll" data-target="#navbarVert" data-offset="0"  >
+					<div class="scrollspySite bg-white my-3 ml-3"  data-spy="scroll" data-target="#navbarVert" data-offset="0"  > -->
 						<h4 id="item1"> História</h4>
 						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
 						tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
@@ -135,9 +134,9 @@
 						consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
 						cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
 						proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-					</div>
+					<!-- </div>
 				</div>
-			</div>	
+			</div>	 -->
 		</div>
 	</div>
 
@@ -191,7 +190,7 @@
 			<div class="row">
 				<div class="col-12 text-center">
 					<h1 class="display-4"> O que já criamos? </h1>
-					<p class="lead"> Portifólio </p>
+					<p class="lead"> Portfólio </p>
 					<hr>
 				</div>
 			</div>
@@ -321,12 +320,15 @@
 		</div>
 	</div>
 	{% endfor %}
-	
-<!-- <script src="{% static 'js/style.js' %}"></script> -->
-<script src="{% static 'js/maps.js' %}"></script>
-<script src="https://maps.googleapis.com/maps/api/js?callback=myMap"></script>
-<script src="{% static 'node_modules/jquery/dist/jquery.js' %}"></script>
-<script src="{% static 'node_modules/popper.js/dist/umd/popper.js' %}"></script>
-<script src="{% static 'node_modules/bootstrap/dist/js/bootstrap.js' %}"></script>
+
+	<!-- footer -->
+	{% include 'core/common/footer.html'%}
+
+	<!-- <script src="{% static 'js/style.js' %}"></script> -->
+	<script src="{% static 'js/maps.js' %}"></script>
+	<script src="https://maps.googleapis.com/maps/api/js?callback=myMap"></script>
+	<script src="{% static 'node_modules/jquery/dist/jquery.js' %}"></script>
+	<script src="{% static 'node_modules/popper.js/dist/umd/popper.js' %}"></script>
+	<script src="{% static 'node_modules/bootstrap/dist/js/bootstrap.js' %}"></script>
 </body>
 </html>

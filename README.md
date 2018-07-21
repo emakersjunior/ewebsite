@@ -14,7 +14,7 @@ virtualenv -p /usr/bin/python3 ewebsite-env
 
 source ewebsite-env/bin/activate
 
-pip install -r requeriments.txt
+pip install -r requirements.txt
 
 python manage.py makemigrations
 
@@ -26,3 +26,7 @@ python manage.py runserver
 
 access http://localhost:8000
 ```
+
+[//]: # (ADM DO DJANGO. User: william; Pass: williamabreu)
+[//]: # (ADM DO MYSQL. User: william; Pass: william)
+[//]: # (ADM DO UBUNTU. User: user; Pass: user)

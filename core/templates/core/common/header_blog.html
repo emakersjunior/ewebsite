@@ -1,9 +1,10 @@
 {% load static %}
+
 <!-- Navbar -->
 <nav class="navbar navbar-expand-lg navbar-light bg-gradient-light">
-	<a class="collapse navbar-collapse" id="navbarImg" href="{% url 'index' %}"><img  src="{% static 'img/logo_emakers_preta.png' %}" height="40em"></a>
+	<a class="collapse navbar-collapse" id="navbarImg" href="{% url 'index' %}"><img  src="{% static 'img/mini_emakersjr_logo_dark.png' %}" height="40em"></a>
 	<div class="container">
-		<a class="navbar-brand h1 mb-0" href="{% url 'blog' %}"> Blog </a>
+		<a class="navbar-brand h1 mb-0" href="{% url 'index' %}"> Home </a>
 		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSite,#navbarImg">
 			<span class="navbar-toggler-icon"></span>	
 		</button>
@@ -11,8 +12,17 @@
 		<div class="collapse navbar-collapse" id="navbarSite">
 			<ul class="navbar-nav mr-auto">
 				<li class="nav-item mr-2">
-					<a class="nav-link" href="{% url 'index' %}">Home</a>
+					<a class="nav-link" href="{% url 'index' %}#servicos">Serviços</a>
 				</li>
+
+				<li class="nav-item mr-2">
+					<a class="nav-link" href="{% url 'index' %}#portfolio">Portfólio</a>
+				</li>
+
+				<li class="nav-item mr-2">
+					<a class="nav-link" href="{% url 'blog' %}">Blog</a>
+				</li>
+
 				<li class="nav-item mr-2">
 					<a class="nav-link" href="{% url 'equipe' %}">Equipe</a>
 				</li>
@@ -20,7 +30,7 @@
 					<a class="nav-link" href="{% url 'contato' %}">Fale Conosco</a>
 				</li>
 			</ul>
-
+			
 			<ul class="navbar-nav ml-auto">
 				<form class="form-inline" method="get" action="{% url 'pesquisa_blog' %}">
 					<input name="q" value="{{request.GET.get}}" type="search" class="form-control mr-2" aria-label="Small" aria-describedby="inputGroup-sizing-sm" placeholder="Pesquisar...">
@@ -31,3 +41,5 @@
 		</div>
 	</div>
 </nav>
+
+<br>

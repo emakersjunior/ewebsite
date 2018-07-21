@@ -8,19 +8,14 @@
 	<!-- Navbar -->
 	{% include 'core/common/header.html' %}
 
-	<div class="d-block" style="background-image: url('{% static 'img/bg-tools.jpg' %}'); background-repeat: no-repeat;
-    background-size: 100%;">
+	<div class="d-block">
 		<div class="container" >
 			
 			<div class="row">
-				
 				<div class="col-12 text-center mt-5 mb-5">
-					
-					<h1 class="display-1 roxo">EMakers</h1>
-					<p>Este é o primeiro website do núcleo de estudos em Sistemas Embarcados, <i>Internet das coisas</i> e Otimização. </p>
-
+					<h1 class="display-4 roxo">EMakers Júnior</h1>
+					<p>Este é o primeiro website da nova empresa júnior do Departamento de Ciência da Computação da UFLA</p>
 				</div>
-
 			</div>
 
 			<!-- Cards -->
@@ -65,8 +60,11 @@
 		</div>
 	</div>
 
-<script src="{% static 'node_modules/jquery/dist/jquery.js' %}"></script>
-<script src="{% static 'node_modules/popper.js/dist/umd/popper.js' %}"></script>
-<script src="{% static 'node_modules/bootstrap/dist/js/bootstrap.js' %}"></script>
+	<!-- footer -->
+	{% include 'core/common/footer.html'%}
+	
+	<script src="{% static 'node_modules/jquery/dist/jquery.js' %}"></script>
+	<script src="{% static 'node_modules/popper.js/dist/umd/popper.js' %}"></script>
+	<script src="{% static 'node_modules/bootstrap/dist/js/bootstrap.js' %}"></script>
 </body>
 </html>

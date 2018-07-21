@@ -25,7 +25,7 @@ SECRET_KEY = '#6rw(sxn+-#b*zup5b8nb(#rsj#@f94hyncbh76x_!(dp$2$9z'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['192.168.0.101', 'localhost', '*']
+ALLOWED_HOSTS = ['192.168.0.100', 'localhost', '*']
 
 
 # Application definition
@@ -82,11 +82,10 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
         'NAME': 'ewebsite',
-        # 'NAME': os.path.join(BASE_DIR, 'mydb'),
-        'USER': 'emakers',
-        'PASSWORD': 'emakersjr',
-        'HOST': 'localhost',
-        'PORT': '3306', # 8000 is default
+        'USER': 'william',
+        'PASSWORD': 'william',
+        'HOST': '192.168.0.199',
+        'PORT': '3306', 
     }
 }
 
